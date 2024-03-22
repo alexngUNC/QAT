@@ -1,0 +1,837 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8601] # /home/ubuntu/TensorRT-8.6.1.6/bin/trtexec --separateProfileRun --verbose --int8 --dumpProfile --dumpLayerInfo --loadEngine=./resnet50-quant.engine
+[03/21/2024-08:05:01] [I] === Model Options ===
+[03/21/2024-08:05:01] [I] Format: *
+[03/21/2024-08:05:01] [I] Model: 
+[03/21/2024-08:05:01] [I] Output:
+[03/21/2024-08:05:01] [I] === Build Options ===
+[03/21/2024-08:05:01] [I] Max batch: 1
+[03/21/2024-08:05:01] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[03/21/2024-08:05:01] [I] minTiming: 1
+[03/21/2024-08:05:01] [I] avgTiming: 8
+[03/21/2024-08:05:01] [I] Precision: FP32+INT8
+[03/21/2024-08:05:01] [I] LayerPrecisions: 
+[03/21/2024-08:05:01] [I] Layer Device Types: 
+[03/21/2024-08:05:01] [I] Calibration: Dynamic
+[03/21/2024-08:05:01] [I] Refit: Disabled
+[03/21/2024-08:05:01] [I] Version Compatible: Disabled
+[03/21/2024-08:05:01] [I] TensorRT runtime: full
+[03/21/2024-08:05:01] [I] Lean DLL Path: 
+[03/21/2024-08:05:01] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[03/21/2024-08:05:01] [I] Exclude Lean Runtime: Disabled
+[03/21/2024-08:05:01] [I] Sparsity: Disabled
+[03/21/2024-08:05:01] [I] Safe mode: Disabled
+[03/21/2024-08:05:01] [I] Build DLA standalone loadable: Disabled
+[03/21/2024-08:05:01] [I] Allow GPU fallback for DLA: Disabled
+[03/21/2024-08:05:01] [I] DirectIO mode: Disabled
+[03/21/2024-08:05:01] [I] Restricted mode: Disabled
+[03/21/2024-08:05:01] [I] Skip inference: Disabled
+[03/21/2024-08:05:01] [I] Save engine: 
+[03/21/2024-08:05:01] [I] Load engine: ./resnet50-quant.engine
+[03/21/2024-08:05:01] [I] Profiling verbosity: 0
+[03/21/2024-08:05:01] [I] Tactic sources: Using default tactic sources
+[03/21/2024-08:05:01] [I] timingCacheMode: local
+[03/21/2024-08:05:01] [I] timingCacheFile: 
+[03/21/2024-08:05:01] [I] Heuristic: Disabled
+[03/21/2024-08:05:01] [I] Preview Features: Use default preview flags.
+[03/21/2024-08:05:01] [I] MaxAuxStreams: -1
+[03/21/2024-08:05:01] [I] BuilderOptimizationLevel: -1
+[03/21/2024-08:05:01] [I] Input(s)s format: fp32:CHW
+[03/21/2024-08:05:01] [I] Output(s)s format: fp32:CHW
+[03/21/2024-08:05:01] [I] Input build shapes: model
+[03/21/2024-08:05:01] [I] Input calibration shapes: model
+[03/21/2024-08:05:01] [I] === System Options ===
+[03/21/2024-08:05:01] [I] Device: 0
+[03/21/2024-08:05:01] [I] DLACore: 
+[03/21/2024-08:05:01] [I] Plugins:
+[03/21/2024-08:05:01] [I] setPluginsToSerialize:
+[03/21/2024-08:05:01] [I] dynamicPlugins:
+[03/21/2024-08:05:01] [I] ignoreParsedPluginLibs: 0
+[03/21/2024-08:05:01] [I] 
+[03/21/2024-08:05:01] [I] === Inference Options ===
+[03/21/2024-08:05:01] [I] Batch: 1
+[03/21/2024-08:05:01] [I] Input inference shapes: model
+[03/21/2024-08:05:01] [I] Iterations: 10
+[03/21/2024-08:05:01] [I] Duration: 3s (+ 200ms warm up)
+[03/21/2024-08:05:01] [I] Sleep time: 0ms
+[03/21/2024-08:05:01] [I] Idle time: 0ms
+[03/21/2024-08:05:01] [I] Inference Streams: 1
+[03/21/2024-08:05:01] [I] ExposeDMA: Disabled
+[03/21/2024-08:05:01] [I] Data transfers: Enabled
+[03/21/2024-08:05:01] [I] Spin-wait: Disabled
+[03/21/2024-08:05:01] [I] Multithreading: Disabled
+[03/21/2024-08:05:01] [I] CUDA Graph: Disabled
+[03/21/2024-08:05:01] [I] Separate profiling: Enabled
+[03/21/2024-08:05:01] [I] Time Deserialize: Disabled
+[03/21/2024-08:05:01] [I] Time Refit: Disabled
+[03/21/2024-08:05:01] [I] NVTX verbosity: 0
+[03/21/2024-08:05:01] [I] Persistent Cache Ratio: 0
+[03/21/2024-08:05:01] [I] Inputs:
+[03/21/2024-08:05:01] [I] === Reporting Options ===
+[03/21/2024-08:05:01] [I] Verbose: Enabled
+[03/21/2024-08:05:01] [I] Averages: 10 inferences
+[03/21/2024-08:05:01] [I] Percentiles: 90,95,99
+[03/21/2024-08:05:01] [I] Dump refittable layers:Disabled
+[03/21/2024-08:05:01] [I] Dump output: Disabled
+[03/21/2024-08:05:01] [I] Profile: Enabled
+[03/21/2024-08:05:01] [I] Export timing to JSON file: 
+[03/21/2024-08:05:01] [I] Export output to JSON file: 
+[03/21/2024-08:05:01] [I] Export profile to JSON file: 
+[03/21/2024-08:05:01] [I] 
+[03/21/2024-08:05:01] [I] === Device Information ===
+[03/21/2024-08:05:01] [I] Selected Device: NVIDIA A10
+[03/21/2024-08:05:01] [I] Compute Capability: 8.6
+[03/21/2024-08:05:01] [I] SMs: 72
+[03/21/2024-08:05:01] [I] Device Global Memory: 22515 MiB
+[03/21/2024-08:05:01] [I] Shared Memory per SM: 100 KiB
+[03/21/2024-08:05:01] [I] Memory Bus Width: 384 bits (ECC enabled)
+[03/21/2024-08:05:01] [I] Application Compute Clock Rate: 1.695 GHz
+[03/21/2024-08:05:01] [I] Application Memory Clock Rate: 6.251 GHz
+[03/21/2024-08:05:01] [I] 
+[03/21/2024-08:05:01] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[03/21/2024-08:05:01] [I] 
+[03/21/2024-08:05:01] [I] TensorRT version: 8.6.1
+[03/21/2024-08:05:01] [I] Loading standard plugins
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::BatchedNMS_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::BatchTilePlugin_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Clip_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::CoordConvAC version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::CropAndResizeDynamic version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::CropAndResize version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::DecodeBbox3DPlugin version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::DetectionLayer_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::EfficientNMS_Explicit_TF_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::EfficientNMS_Implicit_TF_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::EfficientNMS_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::FlattenConcat_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::GenerateDetection_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::GridAnchor_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::GridAnchorRect_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 2
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::LReLU_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ModulatedDeformConv2d version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::MultilevelCropAndResize_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::MultilevelProposeROI_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::MultiscaleDeformableAttnPlugin_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::NMSDynamic_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::NMS_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Normalize_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::PillarScatterPlugin version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::PriorBox_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ProposalDynamic version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ProposalLayer_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Proposal version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::PyramidROIAlign_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Region_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Reorg_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ResizeNearest_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ROIAlign_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::RPROI_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::ScatterND version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::SpecialSlice_TRT version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::Split version 1
+[03/21/2024-08:05:01] [V] [TRT] Registered plugin creator - ::VoxelGeneratorPlugin version 1
+[03/21/2024-08:05:01] [I] Engine loaded in 0.0338036 sec.
+[03/21/2024-08:05:01] [I] [TRT] Loaded engine size: 32 MiB
+[03/21/2024-08:05:01] [V] [TRT] Deserialization required 24284 microseconds.
+[03/21/2024-08:05:01] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +30, now: CPU 0, GPU 30 (MiB)
+[03/21/2024-08:05:01] [I] Engine deserialized in 0.0332775 sec.
+[03/21/2024-08:05:01] [V] [TRT] Total per-runner device persistent memory is 0
+[03/21/2024-08:05:01] [V] [TRT] Total per-runner host persistent memory is 280560
+[03/21/2024-08:05:01] [V] [TRT] Allocated activation device memory of size 10035200
+[03/21/2024-08:05:01] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 0, GPU 40 (MiB)
+[03/21/2024-08:05:01] [V] [TRT] CUDA lazy loading is enabled.
+[03/21/2024-08:05:01] [I] Setting persistentCacheLimit to 0 bytes.
+[03/21/2024-08:05:01] [V] Using enqueueV3.
+[03/21/2024-08:05:01] [I] Using random values for input onnx::QuantizeLinear_0__0
+[03/21/2024-08:05:01] [I] Input binding for onnx::QuantizeLinear_0__0 with dimensions 1x3x224x224 is created.
+[03/21/2024-08:05:01] [I] Output binding for 1387__738 with dimensions 1x1000 is created.
+[03/21/2024-08:05:01] [I] Layer Information:
+[03/21/2024-08:05:01] [I] [TRT] The profiling verbosity was set to ProfilingVerbosity::kLAYER_NAMES_ONLY when the engine was built, so only the layer names will be returned. Rebuild the engine with ProfilingVerbosity::kDETAILED to get more verbose layer information.
+[03/21/2024-08:05:01] [I] Layers:
+/conv1/input_quantizer/QuantizeLinear
+conv1.weight__5 + /conv1/weight_quantizer/QuantizeLinear + /conv1/Conv
+/bn1/BatchNormalization + /relu/Relu
+/layer1/layer1.0/conv1/input_quantizer/QuantizeLinear
+/maxpool/MaxPool
+layer1.0.conv1.weight__21 + /layer1/layer1.0/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv1/Conv
+layer1.0.downsample.0.weight__61 + /layer1/layer1.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer1/layer1.0/downsample/downsample.0/Conv
+/layer1/layer1.0/downsample/downsample.1/BatchNormalization
+layer1.0.conv2.weight__36 + /layer1/layer1.0/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv2/Conv
+layer1.0.conv3.weight__49 + /layer1/layer1.0/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv3/Conv
+/layer1/layer1.0/bn3/BatchNormalization
+PWN(/layer1/layer1.0/Add + /layer1/layer1.0/relu_2/Relu)
+/layer1/layer1.0/relu/output_quantizer_2/QuantizeLinear
+/layer1/layer1.0/relu/output_quantizer_2/DequantizeLinear__copy
+layer1.1.conv1.weight__74 + /layer1/layer1.1/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv1/Conv
+/layer1/layer1.1/bn1/BatchNormalization + /layer1/layer1.1/relu/Relu
+/layer1/layer1.1/relu/output_quantizer/QuantizeLinear
+Reformatting CopyNode for Input Tensor 0 to layer1.1.conv2.weight__89 + /layer1/layer1.1/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv2/Conv
+layer1.1.conv2.weight__89 + /layer1/layer1.1/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv2/Conv
+layer1.1.conv3.weight__102 + /layer1/layer1.1/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv3/Conv
+/layer1/layer1.1/bn3/BatchNormalization
+PWN(/layer1/layer1.1/Add + /layer1/layer1.1/relu_2/Relu)
+/layer1/layer1.1/relu/output_quantizer_2/QuantizeLinear
+/layer1/layer1.1/relu/output_quantizer_2/DequantizeLinear__copy
+layer1.2.conv1.weight__116 + /layer1/layer1.2/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv1/Conv
+/layer1/layer1.2/bn1/BatchNormalization + /layer1/layer1.2/relu/Relu
+/layer1/layer1.2/conv2/input_quantizer/QuantizeLinear
+Reformatting CopyNode for Input Tensor 0 to layer1.2.conv2.weight__130 + /layer1/layer1.2/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv2/Conv
+layer1.2.conv2.weight__130 + /layer1/layer1.2/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv2/Conv
+layer1.2.conv3.weight__144 + /layer1/layer1.2/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv3/Conv
+/layer1/layer1.2/bn3/BatchNormalization
+PWN(/layer1/layer1.2/Add + /layer1/layer1.2/relu_2/Relu)
+/layer2/layer2.0/conv1/input_quantizer/QuantizeLinear
+layer2.0.conv1.weight__159 + /layer2/layer2.0/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv1/Conv
+layer2.0.downsample.0.weight__199 + /layer2/layer2.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer2/layer2.0/downsample/downsample.0/Conv
+/layer2/layer2.0/bn1/BatchNormalization + /layer2/layer2.0/relu/Relu
+/layer2/layer2.0/downsample/downsample.1/BatchNormalization
+/layer2/layer2.0/relu/output_quantizer/QuantizeLinear
+layer2.0.conv2.weight__173 + /layer2/layer2.0/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv2/Conv
+layer2.0.conv3.weight__187 + /layer2/layer2.0/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv3/Conv
+/layer2/layer2.0/bn3/BatchNormalization
+PWN(/layer2/layer2.0/Add + /layer2/layer2.0/relu_2/Relu)
+/layer2/layer2.0/relu/output_quantizer_2/QuantizeLinear
+/layer2/layer2.0/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer2.1.conv1.weight__212 + /layer2/layer2.1/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv1/Conv
+layer2.1.conv1.weight__212 + /layer2/layer2.1/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv1/Conv
+/layer2/layer2.1/bn1/BatchNormalization + /layer2/layer2.1/relu/Relu
+/layer2/layer2.1/relu/output_quantizer/QuantizeLinear
+layer2.1.conv2.weight__227 + /layer2/layer2.1/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv2/Conv
+layer2.1.conv3.weight__240 + /layer2/layer2.1/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv3/Conv
+/layer2/layer2.1/bn3/BatchNormalization
+PWN(/layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu)
+/layer2/layer2.1/relu/output_quantizer_2/QuantizeLinear
+/layer2/layer2.1/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer2.2.conv1.weight__254 + /layer2/layer2.2/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv1/Conv
+layer2.2.conv1.weight__254 + /layer2/layer2.2/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv1/Conv
+/layer2/layer2.2/bn1/BatchNormalization + /layer2/layer2.2/relu/Relu
+/layer2/layer2.2/relu/output_quantizer/QuantizeLinear
+layer2.2.conv2.weight__268 + /layer2/layer2.2/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv2/Conv
+layer2.2.conv3.weight__281 + /layer2/layer2.2/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv3/Conv
+/layer2/layer2.2/bn3/BatchNormalization
+PWN(/layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu)
+/layer2/layer2.2/relu/output_quantizer_2/QuantizeLinear
+/layer2/layer2.2/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer2.3.conv1.weight__295 + /layer2/layer2.3/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv1/Conv
+layer2.3.conv1.weight__295 + /layer2/layer2.3/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv1/Conv
+/layer2/layer2.3/bn1/BatchNormalization + /layer2/layer2.3/relu/Relu
+/layer2/layer2.3/conv2/input_quantizer/QuantizeLinear
+layer2.3.conv2.weight__309 + /layer2/layer2.3/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv2/Conv
+layer2.3.conv3.weight__323 + /layer2/layer2.3/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv3/Conv
+/layer2/layer2.3/bn3/BatchNormalization
+PWN(/layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu)
+/layer3/layer3.0/conv1/input_quantizer/QuantizeLinear
+layer3.0.conv1.weight__338 + /layer3/layer3.0/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv1/Conv
+layer3.0.downsample.0.weight__377 + /layer3/layer3.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer3/layer3.0/downsample/downsample.0/Conv
+/layer3/layer3.0/bn1/BatchNormalization + /layer3/layer3.0/relu/Relu
+/layer3/layer3.0/downsample/downsample.1/BatchNormalization
+/layer3/layer3.0/relu/output_quantizer/QuantizeLinear
+layer3.0.conv2.weight__352 + /layer3/layer3.0/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv2/Conv
+layer3.0.conv3.weight__365 + /layer3/layer3.0/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv3/Conv
+/layer3/layer3.0/bn3/BatchNormalization
+PWN(/layer3/layer3.0/Add + /layer3/layer3.0/relu_2/Relu)
+/layer3/layer3.0/relu/output_quantizer_2/QuantizeLinear
+/layer3/layer3.0/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer3.1.conv1.weight__391 + /layer3/layer3.1/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv1/Conv
+layer3.1.conv1.weight__391 + /layer3/layer3.1/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv1/Conv
+/layer3/layer3.1/bn1/BatchNormalization + /layer3/layer3.1/relu/Relu
+/layer3/layer3.1/relu/output_quantizer/QuantizeLinear
+layer3.1.conv2.weight__406 + /layer3/layer3.1/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv2/Conv
+layer3.1.conv3.weight__419 + /layer3/layer3.1/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv3/Conv
+/layer3/layer3.1/bn3/BatchNormalization
+PWN(/layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu)
+/layer3/layer3.1/relu/output_quantizer_2/QuantizeLinear
+/layer3/layer3.1/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer3.2.conv1.weight__433 + /layer3/layer3.2/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv1/Conv
+layer3.2.conv1.weight__433 + /layer3/layer3.2/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv1/Conv
+/layer3/layer3.2/bn1/BatchNormalization + /layer3/layer3.2/relu/Relu
+/layer3/layer3.2/relu/output_quantizer/QuantizeLinear
+layer3.2.conv2.weight__447 + /layer3/layer3.2/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv2/Conv
+layer3.2.conv3.weight__460 + /layer3/layer3.2/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv3/Conv
+/layer3/layer3.2/bn3/BatchNormalization
+PWN(/layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu)
+/layer3/layer3.2/relu/output_quantizer_2/QuantizeLinear
+/layer3/layer3.2/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer3.3.conv1.weight__474 + /layer3/layer3.3/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv1/Conv
+layer3.3.conv1.weight__474 + /layer3/layer3.3/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv1/Conv
+/layer3/layer3.3/bn1/BatchNormalization + /layer3/layer3.3/relu/Relu
+/layer3/layer3.3/relu/output_quantizer/QuantizeLinear
+layer3.3.conv2.weight__488 + /layer3/layer3.3/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv2/Conv
+layer3.3.conv3.weight__501 + /layer3/layer3.3/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv3/Conv
+/layer3/layer3.3/bn3/BatchNormalization
+PWN(/layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu)
+/layer3/layer3.3/relu/output_quantizer_2/QuantizeLinear
+/layer3/layer3.3/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer3.4.conv1.weight__515 + /layer3/layer3.4/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv1/Conv
+layer3.4.conv1.weight__515 + /layer3/layer3.4/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv1/Conv
+/layer3/layer3.4/bn1/BatchNormalization + /layer3/layer3.4/relu/Relu
+/layer3/layer3.4/relu/output_quantizer/QuantizeLinear
+layer3.4.conv2.weight__529 + /layer3/layer3.4/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv2/Conv
+layer3.4.conv3.weight__542 + /layer3/layer3.4/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv3/Conv
+/layer3/layer3.4/bn3/BatchNormalization
+PWN(/layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu)
+/layer3/layer3.4/relu/output_quantizer_2/QuantizeLinear
+/layer3/layer3.4/relu/output_quantizer_2/DequantizeLinear__copy
+Reformatting CopyNode for Input Tensor 0 to layer3.5.conv1.weight__556 + /layer3/layer3.5/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv1/Conv
+layer3.5.conv1.weight__556 + /layer3/layer3.5/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv1/Conv
+/layer3/layer3.5/bn1/BatchNormalization + /layer3/layer3.5/relu/Relu
+/layer3/layer3.5/conv2/input_quantizer/QuantizeLinear
+layer3.5.conv2.weight__570 + /layer3/layer3.5/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv2/Conv
+layer3.5.conv3.weight__584 + /layer3/layer3.5/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv3/Conv
+/layer3/layer3.5/bn3/BatchNormalization
+PWN(/layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu)
+/layer4/layer4.0/conv1/input_quantizer/QuantizeLinear
+layer4.0.conv1.weight__599 + /layer4/layer4.0/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv1/Conv
+layer4.0.downsample.0.weight__638 + /layer4/layer4.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer4/layer4.0/downsample/downsample.0/Conv
+/layer4/layer4.0/bn1/BatchNormalization + /layer4/layer4.0/relu/Relu
+/layer4/layer4.0/downsample/downsample.1/BatchNormalization
+/layer4/layer4.0/relu/output_quantizer/QuantizeLinear
+layer4.0.conv2.weight__613 + /layer4/layer4.0/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv2/Conv
+layer4.0.conv3.weight__626 + /layer4/layer4.0/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv3/Conv
+/layer4/layer4.0/bn3/BatchNormalization
+Reformatting CopyNode for Input Tensor 0 to PWN(/layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu)
+Reformatting CopyNode for Input Tensor 1 to PWN(/layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu)
+PWN(/layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu)
+/layer4/layer4.0/relu/output_quantizer_2/QuantizeLinear
+/layer4/layer4.0/relu/output_quantizer_2/DequantizeLinear__copy
+layer4.1.conv1.weight__652 + /layer4/layer4.1/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv1/Conv
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/bn1/BatchNormalization + /layer4/layer4.1/relu/Relu
+/layer4/layer4.1/bn1/BatchNormalization + /layer4/layer4.1/relu/Relu
+/layer4/layer4.1/relu/output_quantizer/QuantizeLinear
+layer4.1.conv2.weight__667 + /layer4/layer4.1/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv2/Conv
+layer4.1.conv3.weight__680 + /layer4/layer4.1/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv3/Conv
+/layer4/layer4.1/bn3/BatchNormalization
+Reformatting CopyNode for Input Tensor 0 to PWN(/layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu)
+Reformatting CopyNode for Input Tensor 1 to PWN(/layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu)
+PWN(/layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu)
+/layer4/layer4.1/relu/output_quantizer_2/QuantizeLinear
+/layer4/layer4.1/relu/output_quantizer_2/DequantizeLinear__copy
+layer4.2.conv1.weight__694 + /layer4/layer4.2/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv1/Conv
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/bn1/BatchNormalization + /layer4/layer4.2/relu/Relu
+/layer4/layer4.2/bn1/BatchNormalization + /layer4/layer4.2/relu/Relu
+/layer4/layer4.2/conv2/input_quantizer/QuantizeLinear
+layer4.2.conv2.weight__708 + /layer4/layer4.2/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv2/Conv
+layer4.2.conv3.weight__722 + /layer4/layer4.2/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv3/Conv
+/layer4/layer4.2/bn3/BatchNormalization
+Reformatting CopyNode for Input Tensor 0 to PWN(/layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu)
+Reformatting CopyNode for Input Tensor 1 to PWN(/layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu)
+PWN(/layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu)
+Reformatting CopyNode for Input Tensor 0 to /avgpool/GlobalAveragePool
+/avgpool/GlobalAveragePool
+/fc/Gemm
+reshape_after_/fc/Gemm
+
+Bindings:
+onnx::QuantizeLinear_0__0
+1387__738
+[03/21/2024-08:05:01] [I] Starting inference
+[03/21/2024-08:05:05] [I] Warmup completed 152 queries over 200 ms
+[03/21/2024-08:05:05] [I] Timing trace has 3109 queries over 3.00292 s
+[03/21/2024-08:05:05] [I] 
+[03/21/2024-08:05:05] [I] === Trace details ===
+[03/21/2024-08:05:05] [I] Trace averages of 10 runs:
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963379 ms - Host latency: 1.0073 ms (enqueue 0.699008 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962662 ms - Host latency: 1.01372 ms (enqueue 0.697598 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962149 ms - Host latency: 1.01742 ms (enqueue 0.717783 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962047 ms - Host latency: 1.01492 ms (enqueue 0.701892 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.961842 ms - Host latency: 1.01715 ms (enqueue 0.726715 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963889 ms - Host latency: 1.01368 ms (enqueue 0.661142 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964609 ms - Host latency: 1.01702 ms (enqueue 0.765778 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96297 ms - Host latency: 1.00674 ms (enqueue 0.625839 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963684 ms - Host latency: 1.01312 ms (enqueue 0.652289 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963071 ms - Host latency: 1.01848 ms (enqueue 0.68403 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.02725 ms (enqueue 0.699933 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.02147 ms (enqueue 0.744415 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964609 ms - Host latency: 1.01651 ms (enqueue 0.611304 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963586 ms - Host latency: 1.02087 ms (enqueue 0.724393 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964401 ms - Host latency: 1.01453 ms (enqueue 0.688211 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.9642 ms - Host latency: 1.02029 ms (enqueue 0.733249 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963498 ms - Host latency: 1.01961 ms (enqueue 0.719043 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963684 ms - Host latency: 1.01282 ms (enqueue 0.640857 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962048 ms - Host latency: 1.02302 ms (enqueue 0.702689 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963583 ms - Host latency: 1.0128 ms (enqueue 0.70162 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963785 ms - Host latency: 1.01895 ms (enqueue 0.651804 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963275 ms - Host latency: 1.01907 ms (enqueue 0.721576 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964093 ms - Host latency: 1.0129 ms (enqueue 0.752536 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.965018 ms - Host latency: 1.01526 ms (enqueue 0.677988 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963583 ms - Host latency: 1.02447 ms (enqueue 0.684335 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963687 ms - Host latency: 1.00723 ms (enqueue 0.699927 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963687 ms - Host latency: 1.01981 ms (enqueue 0.668356 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963586 ms - Host latency: 1.01877 ms (enqueue 0.683826 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963486 ms - Host latency: 1.01391 ms (enqueue 0.718369 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964612 ms - Host latency: 1.0195 ms (enqueue 0.666086 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.9642 ms - Host latency: 1.02014 ms (enqueue 0.713626 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963065 ms - Host latency: 1.01309 ms (enqueue 0.715173 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964291 ms - Host latency: 1.01414 ms (enqueue 0.671643 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963782 ms - Host latency: 1.01364 ms (enqueue 0.630157 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964111 ms - Host latency: 1.02233 ms (enqueue 0.660693 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963367 ms - Host latency: 1.01906 ms (enqueue 0.705469 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962756 ms - Host latency: 1.01272 ms (enqueue 0.682672 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963483 ms - Host latency: 1.01891 ms (enqueue 0.646326 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963379 ms - Host latency: 1.01833 ms (enqueue 0.74953 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963879 ms - Host latency: 1.01875 ms (enqueue 0.732806 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964307 ms - Host latency: 1.01985 ms (enqueue 0.688953 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96441 ms - Host latency: 1.01425 ms (enqueue 0.669635 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964105 ms - Host latency: 1.0137 ms (enqueue 0.725592 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964087 ms - Host latency: 1.02002 ms (enqueue 0.719019 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963373 ms - Host latency: 1.01889 ms (enqueue 0.701434 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963483 ms - Host latency: 1.01841 ms (enqueue 0.728784 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962958 ms - Host latency: 1.0211 ms (enqueue 0.710522 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964508 ms - Host latency: 1.00262 ms (enqueue 0.552319 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964496 ms - Host latency: 0.999817 ms (enqueue 0.513348 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962152 ms - Host latency: 1.00641 ms (enqueue 0.596899 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963593 ms - Host latency: 1.01292 ms (enqueue 0.744519 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963293 ms - Host latency: 1.01926 ms (enqueue 0.671918 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963782 ms - Host latency: 1.0179 ms (enqueue 0.730499 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964709 ms - Host latency: 1.01462 ms (enqueue 0.627142 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962262 ms - Host latency: 1.01763 ms (enqueue 0.713611 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962982 ms - Host latency: 1.01326 ms (enqueue 0.759705 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962775 ms - Host latency: 1.0183 ms (enqueue 0.730402 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963293 ms - Host latency: 1.02218 ms (enqueue 0.755511 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963788 ms - Host latency: 1.01295 ms (enqueue 0.680334 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964612 ms - Host latency: 1.02047 ms (enqueue 0.684863 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963178 ms - Host latency: 1.01257 ms (enqueue 0.682001 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96286 ms - Host latency: 1.02437 ms (enqueue 0.697528 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964099 ms - Host latency: 1.02137 ms (enqueue 0.696771 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963989 ms - Host latency: 1.01945 ms (enqueue 0.772656 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962659 ms - Host latency: 1.01217 ms (enqueue 0.681097 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963788 ms - Host latency: 1.01852 ms (enqueue 0.679352 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964301 ms - Host latency: 1.01909 ms (enqueue 0.707385 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96358 ms - Host latency: 1.01322 ms (enqueue 0.683771 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964215 ms - Host latency: 1.0249 ms (enqueue 0.705646 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96369 ms - Host latency: 1.01349 ms (enqueue 0.719617 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964294 ms - Host latency: 1.02515 ms (enqueue 0.718707 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963184 ms - Host latency: 1.01813 ms (enqueue 0.717633 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96286 ms - Host latency: 1.00683 ms (enqueue 0.630524 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962866 ms - Host latency: 1.02371 ms (enqueue 0.701282 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.01861 ms (enqueue 0.728326 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962762 ms - Host latency: 1.01773 ms (enqueue 0.713147 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963782 ms - Host latency: 1.01877 ms (enqueue 0.674524 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963385 ms - Host latency: 1.013 ms (enqueue 0.740436 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963263 ms - Host latency: 1.025 ms (enqueue 0.702271 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964093 ms - Host latency: 1.01935 ms (enqueue 0.750372 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964606 ms - Host latency: 1.01978 ms (enqueue 0.678802 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.9638 ms - Host latency: 1.01897 ms (enqueue 0.682153 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963184 ms - Host latency: 1.01875 ms (enqueue 0.728406 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962976 ms - Host latency: 1.01248 ms (enqueue 0.664398 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962872 ms - Host latency: 1.01837 ms (enqueue 0.667828 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964276 ms - Host latency: 1.01945 ms (enqueue 0.710571 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963709 ms - Host latency: 1.02533 ms (enqueue 0.678357 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963684 ms - Host latency: 1.01823 ms (enqueue 0.721924 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.00657 ms (enqueue 0.712134 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963806 ms - Host latency: 1.01904 ms (enqueue 0.664368 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.01327 ms (enqueue 0.743567 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963367 ms - Host latency: 1.0125 ms (enqueue 0.669995 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.02441 ms (enqueue 0.722424 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963989 ms - Host latency: 1.01923 ms (enqueue 0.75592 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963074 ms - Host latency: 1.00684 ms (enqueue 0.667749 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.0259 ms (enqueue 0.748083 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963782 ms - Host latency: 1.01334 ms (enqueue 0.708386 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01958 ms (enqueue 0.66228 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963489 ms - Host latency: 1.01918 ms (enqueue 0.749243 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963147 ms - Host latency: 1.01874 ms (enqueue 0.751245 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.02371 ms (enqueue 0.714282 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963611 ms - Host latency: 1.01901 ms (enqueue 0.753088 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964539 ms - Host latency: 1.0137 ms (enqueue 0.683545 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963806 ms - Host latency: 1.02457 ms (enqueue 0.716687 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964294 ms - Host latency: 1.01351 ms (enqueue 0.65741 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963757 ms - Host latency: 1.01929 ms (enqueue 0.658545 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963879 ms - Host latency: 1.01892 ms (enqueue 0.707288 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01296 ms (enqueue 0.688806 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964221 ms - Host latency: 1.01396 ms (enqueue 0.647534 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963489 ms - Host latency: 1.02505 ms (enqueue 0.720203 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.961939 ms - Host latency: 1.01711 ms (enqueue 0.735315 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963098 ms - Host latency: 1.01266 ms (enqueue 0.632019 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.01205 ms (enqueue 0.648535 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963086 ms - Host latency: 1.02517 ms (enqueue 0.689697 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964087 ms - Host latency: 1.01976 ms (enqueue 0.684485 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963709 ms - Host latency: 1.01887 ms (enqueue 0.775122 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962866 ms - Host latency: 1.01323 ms (enqueue 0.667468 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963879 ms - Host latency: 1.01335 ms (enqueue 0.680481 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.01775 ms (enqueue 0.803918 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964368 ms - Host latency: 1.01505 ms (enqueue 0.687207 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962671 ms - Host latency: 1.01436 ms (enqueue 0.679358 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963 ms - Host latency: 1.01292 ms (enqueue 0.738611 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963586 ms - Host latency: 1.01864 ms (enqueue 0.680493 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964612 ms - Host latency: 1.01606 ms (enqueue 0.684375 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964673 ms - Host latency: 1.02017 ms (enqueue 0.735034 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964209 ms - Host latency: 1.01975 ms (enqueue 0.674072 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964514 ms - Host latency: 1.02009 ms (enqueue 0.813184 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963391 ms - Host latency: 1.01588 ms (enqueue 0.619849 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964185 ms - Host latency: 1.01993 ms (enqueue 0.696582 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962585 ms - Host latency: 1.01289 ms (enqueue 0.701758 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963733 ms - Host latency: 1.01921 ms (enqueue 0.701038 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963196 ms - Host latency: 1.01814 ms (enqueue 0.725488 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963159 ms - Host latency: 1.01826 ms (enqueue 0.72439 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963696 ms - Host latency: 1.01624 ms (enqueue 0.633691 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963159 ms - Host latency: 1.01777 ms (enqueue 0.720007 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963171 ms - Host latency: 1.0125 ms (enqueue 0.629504 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963709 ms - Host latency: 1.01926 ms (enqueue 0.728833 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963391 ms - Host latency: 1.00684 ms (enqueue 0.662866 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.01252 ms (enqueue 0.694067 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.01345 ms (enqueue 0.676501 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963599 ms - Host latency: 1.00845 ms (enqueue 0.643066 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962756 ms - Host latency: 1.01216 ms (enqueue 0.684338 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963367 ms - Host latency: 1.01868 ms (enqueue 0.763586 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963037 ms - Host latency: 1.0124 ms (enqueue 0.687305 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964197 ms - Host latency: 1.02518 ms (enqueue 0.717285 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963318 ms - Host latency: 1.01288 ms (enqueue 0.768604 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963159 ms - Host latency: 1.01309 ms (enqueue 0.641711 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963806 ms - Host latency: 1.01934 ms (enqueue 0.718665 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962952 ms - Host latency: 1.01824 ms (enqueue 0.706482 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963159 ms - Host latency: 1.01899 ms (enqueue 0.679028 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964612 ms - Host latency: 1.02061 ms (enqueue 0.667822 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963928 ms - Host latency: 1.01627 ms (enqueue 0.73219 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964807 ms - Host latency: 1.02003 ms (enqueue 0.679565 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962976 ms - Host latency: 1.01335 ms (enqueue 0.672729 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962366 ms - Host latency: 1.015 ms (enqueue 0.736475 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963879 ms - Host latency: 1.021 ms (enqueue 0.670618 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963574 ms - Host latency: 1.01836 ms (enqueue 0.662781 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.01833 ms (enqueue 0.727966 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964307 ms - Host latency: 1.0082 ms (enqueue 0.590259 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.965442 ms - Host latency: 1.00988 ms (enqueue 0.685205 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.02393 ms (enqueue 0.689771 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963611 ms - Host latency: 1.02532 ms (enqueue 0.696314 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964014 ms - Host latency: 1.0192 ms (enqueue 0.703955 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963794 ms - Host latency: 1.01932 ms (enqueue 0.677625 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.01921 ms (enqueue 0.76073 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963245 ms - Host latency: 1.01376 ms (enqueue 0.68241 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962842 ms - Host latency: 1.01848 ms (enqueue 0.689514 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964905 ms - Host latency: 1.01442 ms (enqueue 0.700269 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963074 ms - Host latency: 1.01561 ms (enqueue 0.679883 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963391 ms - Host latency: 1.01963 ms (enqueue 0.688049 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96377 ms - Host latency: 1.013 ms (enqueue 0.70874 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963489 ms - Host latency: 1.01906 ms (enqueue 0.674158 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01846 ms (enqueue 0.72644 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96377 ms - Host latency: 1.01995 ms (enqueue 0.75813 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.02194 ms (enqueue 0.632849 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963293 ms - Host latency: 1.01831 ms (enqueue 0.724438 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962891 ms - Host latency: 1.01765 ms (enqueue 0.663953 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.01875 ms (enqueue 0.680713 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963269 ms - Host latency: 1.0186 ms (enqueue 0.766699 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.01852 ms (enqueue 0.686621 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963342 ms - Host latency: 1.02428 ms (enqueue 0.713293 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963794 ms - Host latency: 1.01356 ms (enqueue 0.713672 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963062 ms - Host latency: 1.02396 ms (enqueue 0.692834 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.01848 ms (enqueue 0.710645 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962891 ms - Host latency: 1.01238 ms (enqueue 0.67345 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963879 ms - Host latency: 1.01881 ms (enqueue 0.660083 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.00765 ms (enqueue 0.65658 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01919 ms (enqueue 0.721045 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963062 ms - Host latency: 1.01793 ms (enqueue 0.65343 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964307 ms - Host latency: 1.01354 ms (enqueue 0.765466 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963977 ms - Host latency: 1.01924 ms (enqueue 0.721887 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964148 ms - Host latency: 1.01383 ms (enqueue 0.726526 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963013 ms - Host latency: 1.01289 ms (enqueue 0.724902 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96377 ms - Host latency: 1.0127 ms (enqueue 0.655957 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963599 ms - Host latency: 1.01316 ms (enqueue 0.683789 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964063 ms - Host latency: 1.01343 ms (enqueue 0.74104 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01296 ms (enqueue 0.647412 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.01907 ms (enqueue 0.753662 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963696 ms - Host latency: 1.01919 ms (enqueue 0.693164 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962891 ms - Host latency: 1.02141 ms (enqueue 0.675073 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963574 ms - Host latency: 1.01255 ms (enqueue 0.69021 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.01941 ms (enqueue 0.650073 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963916 ms - Host latency: 1.02539 ms (enqueue 0.764551 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963818 ms - Host latency: 1.01321 ms (enqueue 0.66167 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962842 ms - Host latency: 1.01814 ms (enqueue 0.678906 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963501 ms - Host latency: 1.01858 ms (enqueue 0.713477 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964209 ms - Host latency: 1.01453 ms (enqueue 0.608667 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964209 ms - Host latency: 1.02512 ms (enqueue 0.731519 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96416 ms - Host latency: 1.01375 ms (enqueue 0.726367 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963843 ms - Host latency: 1.01921 ms (enqueue 0.659546 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964087 ms - Host latency: 1.02444 ms (enqueue 0.741724 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963574 ms - Host latency: 1.01321 ms (enqueue 0.724536 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964233 ms - Host latency: 1.01482 ms (enqueue 0.627637 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964404 ms - Host latency: 1.02576 ms (enqueue 0.737256 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963623 ms - Host latency: 1.01833 ms (enqueue 0.674438 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963208 ms - Host latency: 1.0189 ms (enqueue 0.665601 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963452 ms - Host latency: 1.01899 ms (enqueue 0.713184 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.0134 ms (enqueue 0.690283 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963281 ms - Host latency: 1.01873 ms (enqueue 0.673413 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964307 ms - Host latency: 1.02002 ms (enqueue 0.78374 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96355 ms - Host latency: 1.01318 ms (enqueue 0.755225 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96272 ms - Host latency: 1.02104 ms (enqueue 0.74519 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963916 ms - Host latency: 1.01899 ms (enqueue 0.806079 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963916 ms - Host latency: 1.01396 ms (enqueue 0.634595 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963477 ms - Host latency: 1.02476 ms (enqueue 0.792944 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963818 ms - Host latency: 1.01333 ms (enqueue 0.72915 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963208 ms - Host latency: 1.0188 ms (enqueue 0.699463 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.01865 ms (enqueue 0.66731 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962744 ms - Host latency: 1.0126 ms (enqueue 0.728467 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963232 ms - Host latency: 1.01924 ms (enqueue 0.664355 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963647 ms - Host latency: 1.01333 ms (enqueue 0.74126 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962329 ms - Host latency: 1.01152 ms (enqueue 0.692041 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963184 ms - Host latency: 1.01858 ms (enqueue 0.697681 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962964 ms - Host latency: 1.01265 ms (enqueue 0.741797 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963672 ms - Host latency: 1.02649 ms (enqueue 0.693066 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964893 ms - Host latency: 1.0146 ms (enqueue 0.695142 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964063 ms - Host latency: 1.01365 ms (enqueue 0.636475 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964722 ms - Host latency: 1.02642 ms (enqueue 0.713086 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964233 ms - Host latency: 1.01968 ms (enqueue 0.741309 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963013 ms - Host latency: 1.01233 ms (enqueue 0.68335 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963672 ms - Host latency: 1.01899 ms (enqueue 0.685181 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963818 ms - Host latency: 1.01301 ms (enqueue 0.652979 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962988 ms - Host latency: 1.01843 ms (enqueue 0.658887 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963696 ms - Host latency: 1.01348 ms (enqueue 0.63335 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963721 ms - Host latency: 1.01345 ms (enqueue 0.726831 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.02419 ms (enqueue 0.713306 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962476 ms - Host latency: 1.01152 ms (enqueue 0.64873 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963281 ms - Host latency: 1.0011 ms (enqueue 0.562378 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963818 ms - Host latency: 1.0137 ms (enqueue 0.670068 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963013 ms - Host latency: 1.01799 ms (enqueue 0.770288 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962817 ms - Host latency: 1.01843 ms (enqueue 0.724707 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964404 ms - Host latency: 1.01948 ms (enqueue 0.674146 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962427 ms - Host latency: 1.01748 ms (enqueue 0.714063 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963574 ms - Host latency: 1.01575 ms (enqueue 0.677051 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962769 ms - Host latency: 1.02412 ms (enqueue 0.72959 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964453 ms - Host latency: 1.02048 ms (enqueue 0.695312 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964453 ms - Host latency: 1.02019 ms (enqueue 0.724292 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963916 ms - Host latency: 1.01912 ms (enqueue 0.725635 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964258 ms - Host latency: 1.01614 ms (enqueue 0.642505 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963062 ms - Host latency: 1.02632 ms (enqueue 0.696631 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.01311 ms (enqueue 0.708179 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963843 ms - Host latency: 1.00759 ms (enqueue 0.663355 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964624 ms - Host latency: 1.01987 ms (enqueue 0.725415 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964087 ms - Host latency: 1.01323 ms (enqueue 0.683252 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964697 ms - Host latency: 0.996948 ms (enqueue 0.501514 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964014 ms - Host latency: 0.996289 ms (enqueue 0.502148 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964429 ms - Host latency: 0.99668 ms (enqueue 0.503271 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.9646 ms - Host latency: 0.996655 ms (enqueue 0.497754 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964355 ms - Host latency: 0.996631 ms (enqueue 0.503687 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964209 ms - Host latency: 0.996411 ms (enqueue 0.497583 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963892 ms - Host latency: 1.00198 ms (enqueue 0.551611 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963428 ms - Host latency: 0.995581 ms (enqueue 0.507471 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964795 ms - Host latency: 0.996826 ms (enqueue 0.499463 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96394 ms - Host latency: 0.996045 ms (enqueue 0.502856 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964453 ms - Host latency: 1.00273 ms (enqueue 0.590527 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962891 ms - Host latency: 1.00652 ms (enqueue 0.667383 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.9625 ms - Host latency: 1.02407 ms (enqueue 0.717676 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.01292 ms (enqueue 0.72727 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963696 ms - Host latency: 1.01318 ms (enqueue 0.677515 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964478 ms - Host latency: 1.02039 ms (enqueue 0.734717 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964355 ms - Host latency: 1.01372 ms (enqueue 0.75398 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963281 ms - Host latency: 1.01248 ms (enqueue 0.651807 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96438 ms - Host latency: 1.01968 ms (enqueue 0.765478 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963599 ms - Host latency: 1.01902 ms (enqueue 0.700244 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962939 ms - Host latency: 1.0123 ms (enqueue 0.634473 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963794 ms - Host latency: 1.0198 ms (enqueue 0.763525 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962842 ms - Host latency: 1.01218 ms (enqueue 0.685303 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.01982 ms (enqueue 0.687891 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963428 ms - Host latency: 1.01316 ms (enqueue 0.708228 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964258 ms - Host latency: 1.01433 ms (enqueue 0.618579 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963354 ms - Host latency: 1.01846 ms (enqueue 0.720996 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963257 ms - Host latency: 1.01338 ms (enqueue 0.668237 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962939 ms - Host latency: 1.02415 ms (enqueue 0.690698 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963379 ms - Host latency: 1.01824 ms (enqueue 0.719897 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963306 ms - Host latency: 1.01794 ms (enqueue 0.711792 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964063 ms - Host latency: 1.01367 ms (enqueue 0.661841 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.96477 ms - Host latency: 1.01804 ms (enqueue 0.632642 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.0189 ms (enqueue 0.740503 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963354 ms - Host latency: 1.0189 ms (enqueue 0.719995 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964038 ms - Host latency: 1.00806 ms (enqueue 0.704248 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.962988 ms - Host latency: 1.01802 ms (enqueue 0.66394 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963354 ms - Host latency: 1.01296 ms (enqueue 0.681787 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963208 ms - Host latency: 1.01853 ms (enqueue 0.693872 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963989 ms - Host latency: 1.02507 ms (enqueue 0.679395 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963135 ms - Host latency: 1.01301 ms (enqueue 0.725855 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963843 ms - Host latency: 1.01367 ms (enqueue 0.739868 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963403 ms - Host latency: 1.01257 ms (enqueue 0.658228 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.963013 ms - Host latency: 1.01831 ms (enqueue 0.726367 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964624 ms - Host latency: 1.02036 ms (enqueue 0.739185 ms)
+[03/21/2024-08:05:05] [I] Average on 10 runs - GPU latency: 0.964209 ms - Host latency: 1.01941 ms (enqueue 0.691821 ms)
+[03/21/2024-08:05:05] [I] 
+[03/21/2024-08:05:05] [I] === Performance summary ===
+[03/21/2024-08:05:05] [I] Throughput: 1035.33 qps
+[03/21/2024-08:05:05] [I] Latency: min = 0.990112 ms, max = 1.08643 ms, mean = 1.01628 ms, median = 0.997375 ms, percentile(90%) = 1.05481 ms, percentile(95%) = 1.0564 ms, percentile(99%) = 1.06113 ms
+[03/21/2024-08:05:05] [I] Enqueue Time: min = 0.487305 ms, max = 1.57178 ms, mean = 0.690705 ms, median = 0.546387 ms, percentile(90%) = 1.01404 ms, percentile(95%) = 1.27881 ms, percentile(99%) = 1.41675 ms
+[03/21/2024-08:05:05] [I] H2D Latency: min = 0.02771 ms, max = 0.11908 ms, mean = 0.0487905 ms, median = 0.0286255 ms, percentile(90%) = 0.0864258 ms, percentile(95%) = 0.0876465 ms, percentile(99%) = 0.0927734 ms
+[03/21/2024-08:05:05] [I] GPU Compute Time: min = 0.956421 ms, max = 0.970703 ms, mean = 0.963593 ms, median = 0.963623 ms, percentile(90%) = 0.96582 ms, percentile(95%) = 0.966675 ms, percentile(99%) = 0.968628 ms
+[03/21/2024-08:05:05] [I] D2H Latency: min = 0.00317383 ms, max = 0.00576782 ms, mean = 0.00390319 ms, median = 0.00366211 ms, percentile(90%) = 0.00469971 ms, percentile(95%) = 0.00488281 ms, percentile(99%) = 0.00524902 ms
+[03/21/2024-08:05:05] [I] Total Host Walltime: 3.00292 s
+[03/21/2024-08:05:05] [I] Total GPU Compute Time: 2.99581 s
+[03/21/2024-08:05:05] [I] Explanations of the performance metrics are printed in the verbose logs.
+[03/21/2024-08:05:05] [V] 
+[03/21/2024-08:05:05] [V] === Explanations of the performance metrics ===
+[03/21/2024-08:05:05] [V] Total Host Walltime: the host walltime from when the first query (after warmups) is enqueued to when the last query is completed.
+[03/21/2024-08:05:05] [V] GPU Compute Time: the GPU latency to execute the kernels for a query.
+[03/21/2024-08:05:05] [V] Total GPU Compute Time: the summation of the GPU Compute Time of all the queries. If this is significantly shorter than Total Host Walltime, the GPU may be under-utilized because of host-side overheads or data transfers.
+[03/21/2024-08:05:05] [V] Throughput: the observed throughput computed by dividing the number of queries by the Total Host Walltime. If this is significantly lower than the reciprocal of GPU Compute Time, the GPU may be under-utilized because of host-side overheads or data transfers.
+[03/21/2024-08:05:05] [V] Enqueue Time: the host latency to enqueue a query. If this is longer than GPU Compute Time, the GPU may be under-utilized.
+[03/21/2024-08:05:05] [V] H2D Latency: the latency for host-to-device data transfers for input tensors of a single query.
+[03/21/2024-08:05:05] [V] D2H Latency: the latency for device-to-host data transfers for output tensors of a single query.
+[03/21/2024-08:05:05] [V] Latency: the summation of H2D Latency, GPU Compute Time, and D2H Latency. This is the latency to infer a single query.
+[03/21/2024-08:05:05] [I] 
+[03/21/2024-08:05:08] [I] 
+[03/21/2024-08:05:08] [I] === Profile (2488 iterations ) ===
+[03/21/2024-08:05:08] [I]    Time(ms)     Avg.(ms)   Median(ms)   Time(%)   Layer
+[03/21/2024-08:05:08] [I]       10.39       0.0042       0.0041       0.3   /conv1/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       47.15       0.0189       0.0192       1.6   conv1.weight__5 + /conv1/weight_quantizer/QuantizeLinear + /conv1/Conv
+[03/21/2024-08:05:08] [I]       23.95       0.0096       0.0092       0.8   /bn1/BatchNormalization + /relu/Relu
+[03/21/2024-08:05:08] [I]       22.45       0.0090       0.0092       0.7   /layer1/layer1.0/conv1/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       15.76       0.0063       0.0061       0.5   /maxpool/MaxPool
+[03/21/2024-08:05:08] [I]       15.45       0.0062       0.0061       0.5   layer1.0.conv1.weight__21 + /layer1/layer1.0/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv1/Conv
+[03/21/2024-08:05:08] [I]       30.64       0.0123       0.0123       1.0   layer1.0.downsample.0.weight__61 + /layer1/layer1.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer1/layer1.0/downsample/downsample.0/Conv
+[03/21/2024-08:05:08] [I]       21.95       0.0088       0.0092       0.7   /layer1/layer1.0/downsample/downsample.1/BatchNormalization
+[03/21/2024-08:05:08] [I]       24.77       0.0100       0.0102       0.8   layer1.0.conv2.weight__36 + /layer1/layer1.0/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv2/Conv
+[03/21/2024-08:05:08] [I]       32.46       0.0130       0.0133       1.1   layer1.0.conv3.weight__49 + /layer1/layer1.0/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.0/conv3/Conv
+[03/21/2024-08:05:08] [I]       21.76       0.0087       0.0090       0.7   /layer1/layer1.0/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       41.75       0.0168       0.0164       1.4   PWN(/layer1/layer1.0/Add + /layer1/layer1.0/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       22.31       0.0090       0.0092       0.7   /layer1/layer1.0/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       26.32       0.0106       0.0102       0.9   /layer1/layer1.0/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       21.76       0.0087       0.0090       0.7   layer1.1.conv1.weight__74 + /layer1/layer1.1/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       13.60       0.0055       0.0051       0.4   /layer1/layer1.1/bn1/BatchNormalization + /layer1/layer1.1/relu/Relu
+[03/21/2024-08:05:08] [I]       11.76       0.0047       0.0051       0.4   /layer1/layer1.1/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       11.08       0.0045       0.0041       0.4   Reformatting CopyNode for Input Tensor 0 to layer1.1.conv2.weight__89 + /layer1/layer1.1/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv2/Conv
+[03/21/2024-08:05:08] [I]       22.34       0.0090       0.0092       0.7   layer1.1.conv2.weight__89 + /layer1/layer1.1/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv2/Conv
+[03/21/2024-08:05:08] [I]       28.30       0.0114       0.0113       0.9   layer1.1.conv3.weight__102 + /layer1/layer1.1/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.1/conv3/Conv
+[03/21/2024-08:05:08] [I]       22.04       0.0089       0.0092       0.7   /layer1/layer1.1/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       41.34       0.0166       0.0164       1.4   PWN(/layer1/layer1.1/Add + /layer1/layer1.1/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       21.62       0.0087       0.0085       0.7   /layer1/layer1.1/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       26.51       0.0107       0.0102       0.9   /layer1/layer1.1/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       22.65       0.0091       0.0092       0.7   layer1.2.conv1.weight__116 + /layer1/layer1.2/conv1/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       12.53       0.0050       0.0051       0.4   /layer1/layer1.2/bn1/BatchNormalization + /layer1/layer1.2/relu/Relu
+[03/21/2024-08:05:08] [I]       11.57       0.0047       0.0050       0.4   /layer1/layer1.2/conv2/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       10.52       0.0042       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to layer1.2.conv2.weight__130 + /layer1/layer1.2/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.30       0.0094       0.0092       0.8   layer1.2.conv2.weight__130 + /layer1/layer1.2/conv2/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv2/Conv
+[03/21/2024-08:05:08] [I]       27.41       0.0110       0.0113       0.9   layer1.2.conv3.weight__144 + /layer1/layer1.2/conv3/weight_quantizer/QuantizeLinear + /layer1/layer1.2/conv3/Conv
+[03/21/2024-08:05:08] [I]       22.14       0.0089       0.0092       0.7   /layer1/layer1.2/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       41.21       0.0166       0.0164       1.4   PWN(/layer1/layer1.2/Add + /layer1/layer1.2/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       22.84       0.0092       0.0092       0.8   /layer2/layer2.0/conv1/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       23.11       0.0093       0.0092       0.8   layer2.0.conv1.weight__159 + /layer2/layer2.0/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv1/Conv
+[03/21/2024-08:05:08] [I]       24.40       0.0098       0.0101       0.8   layer2.0.downsample.0.weight__199 + /layer2/layer2.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer2/layer2.0/downsample/downsample.0/Conv
+[03/21/2024-08:05:08] [I]       16.19       0.0065       0.0061       0.5   /layer2/layer2.0/bn1/BatchNormalization + /layer2/layer2.0/relu/Relu
+[03/21/2024-08:05:08] [I]       14.77       0.0059       0.0061       0.5   /layer2/layer2.0/downsample/downsample.1/BatchNormalization
+[03/21/2024-08:05:08] [I]       17.36       0.0070       0.0072       0.6   /layer2/layer2.0/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       23.53       0.0095       0.0092       0.8   layer2.0.conv2.weight__173 + /layer2/layer2.0/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv2/Conv
+[03/21/2024-08:05:08] [I]       20.95       0.0084       0.0082       0.7   layer2.0.conv3.weight__187 + /layer2/layer2.0/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.0/conv3/Conv
+[03/21/2024-08:05:08] [I]       14.09       0.0057       0.0060       0.5   /layer2/layer2.0/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       13.44       0.0054       0.0051       0.4   PWN(/layer2/layer2.0/Add + /layer2/layer2.0/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       11.65       0.0047       0.0051       0.4   /layer2/layer2.0/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       14.64       0.0059       0.0061       0.5   /layer2/layer2.0/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       13.35       0.0054       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer2.1.conv1.weight__212 + /layer2/layer2.1/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       23.57       0.0095       0.0092       0.8   layer2.1.conv1.weight__212 + /layer2/layer2.1/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.59       0.0047       0.0050       0.4   /layer2/layer2.1/bn1/BatchNormalization + /layer2/layer2.1/relu/Relu
+[03/21/2024-08:05:08] [I]       17.40       0.0070       0.0072       0.6   /layer2/layer2.1/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       22.78       0.0092       0.0092       0.8   layer2.1.conv2.weight__227 + /layer2/layer2.1/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.20       0.0093       0.0092       0.8   layer2.1.conv3.weight__240 + /layer2/layer2.1/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.1/conv3/Conv
+[03/21/2024-08:05:08] [I]       14.25       0.0057       0.0061       0.5   /layer2/layer2.1/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       13.39       0.0054       0.0051       0.4   PWN(/layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       11.48       0.0046       0.0048       0.4   /layer2/layer2.1/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       14.67       0.0059       0.0061       0.5   /layer2/layer2.1/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       13.74       0.0055       0.0051       0.5   Reformatting CopyNode for Input Tensor 0 to layer2.2.conv1.weight__254 + /layer2/layer2.2/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       23.45       0.0094       0.0092       0.8   layer2.2.conv1.weight__254 + /layer2/layer2.2/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.37       0.0046       0.0041       0.4   /layer2/layer2.2/bn1/BatchNormalization + /layer2/layer2.2/relu/Relu
+[03/21/2024-08:05:08] [I]       17.27       0.0069       0.0072       0.6   /layer2/layer2.2/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       22.25       0.0089       0.0092       0.7   layer2.2.conv2.weight__268 + /layer2/layer2.2/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv2/Conv
+[03/21/2024-08:05:08] [I]       22.86       0.0092       0.0092       0.8   layer2.2.conv3.weight__281 + /layer2/layer2.2/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.2/conv3/Conv
+[03/21/2024-08:05:08] [I]       14.56       0.0059       0.0061       0.5   /layer2/layer2.2/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       16.44       0.0066       0.0063       0.5   PWN(/layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       11.54       0.0046       0.0049       0.4   /layer2/layer2.2/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       15.70       0.0063       0.0061       0.5   /layer2/layer2.2/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       13.36       0.0054       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer2.3.conv1.weight__295 + /layer2/layer2.3/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv1/Conv
+[03/21/2024-08:05:08] [I]       22.67       0.0091       0.0092       0.7   layer2.3.conv1.weight__295 + /layer2/layer2.3/conv1/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.39       0.0046       0.0043       0.4   /layer2/layer2.3/bn1/BatchNormalization + /layer2/layer2.3/relu/Relu
+[03/21/2024-08:05:08] [I]       17.21       0.0069       0.0072       0.6   /layer2/layer2.3/conv2/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       23.18       0.0093       0.0092       0.8   layer2.3.conv2.weight__309 + /layer2/layer2.3/conv2/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.29       0.0094       0.0092       0.8   layer2.3.conv3.weight__323 + /layer2/layer2.3/conv3/weight_quantizer/QuantizeLinear + /layer2/layer2.3/conv3/Conv
+[03/21/2024-08:05:08] [I]       14.57       0.0059       0.0061       0.5   /layer2/layer2.3/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       15.52       0.0062       0.0061       0.5   PWN(/layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       19.19       0.0077       0.0080       0.6   /layer3/layer3.0/conv1/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       22.74       0.0091       0.0092       0.8   layer3.0.conv1.weight__338 + /layer3/layer3.0/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv1/Conv
+[03/21/2024-08:05:08] [I]       24.42       0.0098       0.0102       0.8   layer3.0.downsample.0.weight__377 + /layer3/layer3.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer3/layer3.0/downsample/downsample.0/Conv
+[03/21/2024-08:05:08] [I]       13.60       0.0055       0.0051       0.4   /layer3/layer3.0/bn1/BatchNormalization + /layer3/layer3.0/relu/Relu
+[03/21/2024-08:05:08] [I]       12.68       0.0051       0.0051       0.4   /layer3/layer3.0/downsample/downsample.1/BatchNormalization
+[03/21/2024-08:05:08] [I]       16.34       0.0066       0.0061       0.5   /layer3/layer3.0/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       25.78       0.0104       0.0102       0.9   layer3.0.conv2.weight__352 + /layer3/layer3.0/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv2/Conv
+[03/21/2024-08:05:08] [I]       22.44       0.0090       0.0092       0.7   layer3.0.conv3.weight__365 + /layer3/layer3.0/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.0/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.38       0.0050       0.0051       0.4   /layer3/layer3.0/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       11.22       0.0045       0.0042       0.4   PWN(/layer3/layer3.0/Add + /layer3/layer3.0/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       10.40       0.0042       0.0041       0.3   /layer3/layer3.0/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       12.74       0.0051       0.0051       0.4   /layer3/layer3.0/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       13.05       0.0052       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer3.1.conv1.weight__391 + /layer3/layer3.1/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       26.69       0.0107       0.0104       0.9   layer3.1.conv1.weight__391 + /layer3/layer3.1/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.34       0.0046       0.0043       0.4   /layer3/layer3.1/bn1/BatchNormalization + /layer3/layer3.1/relu/Relu
+[03/21/2024-08:05:08] [I]       14.00       0.0056       0.0059       0.5   /layer3/layer3.1/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       25.80       0.0104       0.0102       0.9   layer3.1.conv2.weight__406 + /layer3/layer3.1/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.59       0.0095       0.0092       0.8   layer3.1.conv3.weight__419 + /layer3/layer3.1/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.1/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.55       0.0050       0.0051       0.4   /layer3/layer3.1/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       11.99       0.0048       0.0051       0.4   PWN(/layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       10.55       0.0042       0.0041       0.3   /layer3/layer3.1/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       11.68       0.0047       0.0051       0.4   /layer3/layer3.1/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       12.95       0.0052       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer3.2.conv1.weight__433 + /layer3/layer3.2/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       27.16       0.0109       0.0113       0.9   layer3.2.conv1.weight__433 + /layer3/layer3.2/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.24       0.0045       0.0042       0.4   /layer3/layer3.2/bn1/BatchNormalization + /layer3/layer3.2/relu/Relu
+[03/21/2024-08:05:08] [I]       13.95       0.0056       0.0053       0.5   /layer3/layer3.2/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       25.05       0.0101       0.0102       0.8   layer3.2.conv2.weight__447 + /layer3/layer3.2/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv2/Conv
+[03/21/2024-08:05:08] [I]       24.32       0.0098       0.0101       0.8   layer3.2.conv3.weight__460 + /layer3/layer3.2/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.2/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.61       0.0051       0.0051       0.4   /layer3/layer3.2/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       10.95       0.0044       0.0041       0.4   PWN(/layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       10.36       0.0042       0.0041       0.3   /layer3/layer3.2/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       11.74       0.0047       0.0051       0.4   /layer3/layer3.2/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       12.95       0.0052       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer3.3.conv1.weight__474 + /layer3/layer3.3/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv1/Conv
+[03/21/2024-08:05:08] [I]       26.30       0.0106       0.0102       0.9   layer3.3.conv1.weight__474 + /layer3/layer3.3/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.29       0.0045       0.0043       0.4   /layer3/layer3.3/bn1/BatchNormalization + /layer3/layer3.3/relu/Relu
+[03/21/2024-08:05:08] [I]       13.95       0.0056       0.0058       0.5   /layer3/layer3.3/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       24.74       0.0099       0.0102       0.8   layer3.3.conv2.weight__488 + /layer3/layer3.3/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.46       0.0094       0.0092       0.8   layer3.3.conv3.weight__501 + /layer3/layer3.3/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.3/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.56       0.0050       0.0051       0.4   /layer3/layer3.3/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       11.99       0.0048       0.0051       0.4   PWN(/layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       10.55       0.0042       0.0041       0.3   /layer3/layer3.3/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       11.67       0.0047       0.0050       0.4   /layer3/layer3.3/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       12.94       0.0052       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer3.4.conv1.weight__515 + /layer3/layer3.4/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv1/Conv
+[03/21/2024-08:05:08] [I]       27.72       0.0111       0.0113       0.9   layer3.4.conv1.weight__515 + /layer3/layer3.4/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.35       0.0046       0.0043       0.4   /layer3/layer3.4/bn1/BatchNormalization + /layer3/layer3.4/relu/Relu
+[03/21/2024-08:05:08] [I]       14.05       0.0056       0.0059       0.5   /layer3/layer3.4/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       24.78       0.0100       0.0102       0.8   layer3.4.conv2.weight__529 + /layer3/layer3.4/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv2/Conv
+[03/21/2024-08:05:08] [I]       24.58       0.0099       0.0102       0.8   layer3.4.conv3.weight__542 + /layer3/layer3.4/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.4/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.56       0.0050       0.0051       0.4   /layer3/layer3.4/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       10.95       0.0044       0.0041       0.4   PWN(/layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       10.44       0.0042       0.0041       0.3   /layer3/layer3.4/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       11.72       0.0047       0.0051       0.4   /layer3/layer3.4/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       13.04       0.0052       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to layer3.5.conv1.weight__556 + /layer3/layer3.5/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv1/Conv
+[03/21/2024-08:05:08] [I]       25.84       0.0104       0.0102       0.9   layer3.5.conv1.weight__556 + /layer3/layer3.5/conv1/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.32       0.0045       0.0043       0.4   /layer3/layer3.5/bn1/BatchNormalization + /layer3/layer3.5/relu/Relu
+[03/21/2024-08:05:08] [I]       13.94       0.0056       0.0054       0.5   /layer3/layer3.5/conv2/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       25.68       0.0103       0.0102       0.8   layer3.5.conv2.weight__570 + /layer3/layer3.5/conv2/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv2/Conv
+[03/21/2024-08:05:08] [I]       23.95       0.0096       0.0093       0.8   layer3.5.conv3.weight__584 + /layer3/layer3.5/conv3/weight_quantizer/QuantizeLinear + /layer3/layer3.5/conv3/Conv
+[03/21/2024-08:05:08] [I]       12.59       0.0051       0.0051       0.4   /layer3/layer3.5/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       11.10       0.0045       0.0041       0.4   PWN(/layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       18.36       0.0074       0.0072       0.6   /layer4/layer4.0/conv1/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       27.01       0.0109       0.0112       0.9   layer4.0.conv1.weight__599 + /layer4/layer4.0/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv1/Conv
+[03/21/2024-08:05:08] [I]       29.27       0.0118       0.0116       1.0   layer4.0.downsample.0.weight__638 + /layer4/layer4.0/downsample/downsample.0/weight_quantizer/QuantizeLinear + /layer4/layer4.0/downsample/downsample.0/Conv
+[03/21/2024-08:05:08] [I]       12.43       0.0050       0.0051       0.4   /layer4/layer4.0/bn1/BatchNormalization + /layer4/layer4.0/relu/Relu
+[03/21/2024-08:05:08] [I]       11.39       0.0046       0.0043       0.4   /layer4/layer4.0/downsample/downsample.1/BatchNormalization
+[03/21/2024-08:05:08] [I]       16.97       0.0068       0.0072       0.6   /layer4/layer4.0/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       39.02       0.0157       0.0154       1.3   layer4.0.conv2.weight__613 + /layer4/layer4.0/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv2/Conv
+[03/21/2024-08:05:08] [I]       25.17       0.0101       0.0102       0.8   layer4.0.conv3.weight__626 + /layer4/layer4.0/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.0/conv3/Conv
+[03/21/2024-08:05:08] [I]       11.46       0.0046       0.0044       0.4   /layer4/layer4.0/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       10.12       0.0041       0.0041       0.3   PWN(/layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       15.73       0.0063       0.0061       0.5   /layer4/layer4.0/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       12.66       0.0051       0.0051       0.4   /layer4/layer4.0/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       22.49       0.0090       0.0092       0.7   layer4.1.conv1.weight__652 + /layer4/layer4.1/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.10       0.0045       0.0041       0.4   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/bn1/BatchNormalization + /layer4/layer4.1/relu/Relu
+[03/21/2024-08:05:08] [I]       10.89       0.0044       0.0041       0.4   /layer4/layer4.1/bn1/BatchNormalization + /layer4/layer4.1/relu/Relu
+[03/21/2024-08:05:08] [I]       11.58       0.0047       0.0051       0.4   /layer4/layer4.1/relu/output_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       36.53       0.0147       0.0143       1.2   layer4.1.conv2.weight__667 + /layer4/layer4.1/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv2/Conv
+[03/21/2024-08:05:08] [I]       24.55       0.0099       0.0102       0.8   layer4.1.conv3.weight__680 + /layer4/layer4.1/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.1/conv3/Conv
+[03/21/2024-08:05:08] [I]       11.63       0.0047       0.0050       0.4   /layer4/layer4.1/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       10.46       0.0042       0.0041       0.3   PWN(/layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       16.52       0.0066       0.0064       0.5   /layer4/layer4.1/relu/output_quantizer_2/QuantizeLinear
+[03/21/2024-08:05:08] [I]       12.54       0.0050       0.0051       0.4   /layer4/layer4.1/relu/output_quantizer_2/DequantizeLinear__copy
+[03/21/2024-08:05:08] [I]       22.21       0.0089       0.0092       0.7   layer4.2.conv1.weight__694 + /layer4/layer4.2/conv1/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv1/Conv
+[03/21/2024-08:05:08] [I]       11.64       0.0047       0.0051       0.4   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/bn1/BatchNormalization + /layer4/layer4.2/relu/Relu
+[03/21/2024-08:05:08] [I]       11.03       0.0044       0.0041       0.4   /layer4/layer4.2/bn1/BatchNormalization + /layer4/layer4.2/relu/Relu
+[03/21/2024-08:05:08] [I]       11.93       0.0048       0.0051       0.4   /layer4/layer4.2/conv2/input_quantizer/QuantizeLinear
+[03/21/2024-08:05:08] [I]       35.63       0.0143       0.0143       1.2   layer4.2.conv2.weight__708 + /layer4/layer4.2/conv2/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv2/Conv
+[03/21/2024-08:05:08] [I]       25.46       0.0102       0.0102       0.8   layer4.2.conv3.weight__722 + /layer4/layer4.2/conv3/weight_quantizer/QuantizeLinear + /layer4/layer4.2/conv3/Conv
+[03/21/2024-08:05:08] [I]       11.78       0.0047       0.0051       0.4   /layer4/layer4.2/bn3/BatchNormalization
+[03/21/2024-08:05:08] [I]       10.65       0.0043       0.0041       0.4   PWN(/layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu)
+[03/21/2024-08:05:08] [I]       14.24       0.0057       0.0061       0.5   /avgpool/GlobalAveragePool
+[03/21/2024-08:05:08] [I]       53.60       0.0215       0.0215       1.8   /fc/Gemm
+[03/21/2024-08:05:08] [I]     3031.32       1.2184       1.2186     100.0   Total
+[03/21/2024-08:05:08] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8601] # /home/ubuntu/TensorRT-8.6.1.6/bin/trtexec --separateProfileRun --verbose --int8 --dumpProfile --dumpLayerInfo --loadEngine=./resnet50-quant.engine

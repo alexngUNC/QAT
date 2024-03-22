@@ -1,0 +1,579 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8601] # /home/ubuntu/TensorRT-8.6.1.6/bin/trtexec --separateProfileRun --verbose --dumpProfile --dumpLayerInfo --loadEngine=./resnet50-origin.engine
+[03/21/2024-08:11:10] [I] === Model Options ===
+[03/21/2024-08:11:10] [I] Format: *
+[03/21/2024-08:11:10] [I] Model: 
+[03/21/2024-08:11:10] [I] Output:
+[03/21/2024-08:11:10] [I] === Build Options ===
+[03/21/2024-08:11:10] [I] Max batch: 1
+[03/21/2024-08:11:10] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[03/21/2024-08:11:10] [I] minTiming: 1
+[03/21/2024-08:11:10] [I] avgTiming: 8
+[03/21/2024-08:11:10] [I] Precision: FP32
+[03/21/2024-08:11:10] [I] LayerPrecisions: 
+[03/21/2024-08:11:10] [I] Layer Device Types: 
+[03/21/2024-08:11:10] [I] Calibration: 
+[03/21/2024-08:11:10] [I] Refit: Disabled
+[03/21/2024-08:11:10] [I] Version Compatible: Disabled
+[03/21/2024-08:11:10] [I] TensorRT runtime: full
+[03/21/2024-08:11:10] [I] Lean DLL Path: 
+[03/21/2024-08:11:10] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[03/21/2024-08:11:10] [I] Exclude Lean Runtime: Disabled
+[03/21/2024-08:11:10] [I] Sparsity: Disabled
+[03/21/2024-08:11:10] [I] Safe mode: Disabled
+[03/21/2024-08:11:10] [I] Build DLA standalone loadable: Disabled
+[03/21/2024-08:11:10] [I] Allow GPU fallback for DLA: Disabled
+[03/21/2024-08:11:10] [I] DirectIO mode: Disabled
+[03/21/2024-08:11:10] [I] Restricted mode: Disabled
+[03/21/2024-08:11:10] [I] Skip inference: Disabled
+[03/21/2024-08:11:10] [I] Save engine: 
+[03/21/2024-08:11:10] [I] Load engine: ./resnet50-origin.engine
+[03/21/2024-08:11:10] [I] Profiling verbosity: 0
+[03/21/2024-08:11:10] [I] Tactic sources: Using default tactic sources
+[03/21/2024-08:11:10] [I] timingCacheMode: local
+[03/21/2024-08:11:10] [I] timingCacheFile: 
+[03/21/2024-08:11:10] [I] Heuristic: Disabled
+[03/21/2024-08:11:10] [I] Preview Features: Use default preview flags.
+[03/21/2024-08:11:10] [I] MaxAuxStreams: -1
+[03/21/2024-08:11:10] [I] BuilderOptimizationLevel: -1
+[03/21/2024-08:11:10] [I] Input(s)s format: fp32:CHW
+[03/21/2024-08:11:10] [I] Output(s)s format: fp32:CHW
+[03/21/2024-08:11:10] [I] Input build shapes: model
+[03/21/2024-08:11:10] [I] Input calibration shapes: model
+[03/21/2024-08:11:10] [I] === System Options ===
+[03/21/2024-08:11:10] [I] Device: 0
+[03/21/2024-08:11:10] [I] DLACore: 
+[03/21/2024-08:11:10] [I] Plugins:
+[03/21/2024-08:11:10] [I] setPluginsToSerialize:
+[03/21/2024-08:11:10] [I] dynamicPlugins:
+[03/21/2024-08:11:10] [I] ignoreParsedPluginLibs: 0
+[03/21/2024-08:11:10] [I] 
+[03/21/2024-08:11:10] [I] === Inference Options ===
+[03/21/2024-08:11:10] [I] Batch: 1
+[03/21/2024-08:11:10] [I] Input inference shapes: model
+[03/21/2024-08:11:10] [I] Iterations: 10
+[03/21/2024-08:11:10] [I] Duration: 3s (+ 200ms warm up)
+[03/21/2024-08:11:10] [I] Sleep time: 0ms
+[03/21/2024-08:11:10] [I] Idle time: 0ms
+[03/21/2024-08:11:10] [I] Inference Streams: 1
+[03/21/2024-08:11:10] [I] ExposeDMA: Disabled
+[03/21/2024-08:11:10] [I] Data transfers: Enabled
+[03/21/2024-08:11:10] [I] Spin-wait: Disabled
+[03/21/2024-08:11:10] [I] Multithreading: Disabled
+[03/21/2024-08:11:10] [I] CUDA Graph: Disabled
+[03/21/2024-08:11:10] [I] Separate profiling: Enabled
+[03/21/2024-08:11:10] [I] Time Deserialize: Disabled
+[03/21/2024-08:11:10] [I] Time Refit: Disabled
+[03/21/2024-08:11:10] [I] NVTX verbosity: 0
+[03/21/2024-08:11:10] [I] Persistent Cache Ratio: 0
+[03/21/2024-08:11:10] [I] Inputs:
+[03/21/2024-08:11:10] [I] === Reporting Options ===
+[03/21/2024-08:11:10] [I] Verbose: Enabled
+[03/21/2024-08:11:10] [I] Averages: 10 inferences
+[03/21/2024-08:11:10] [I] Percentiles: 90,95,99
+[03/21/2024-08:11:10] [I] Dump refittable layers:Disabled
+[03/21/2024-08:11:10] [I] Dump output: Disabled
+[03/21/2024-08:11:10] [I] Profile: Enabled
+[03/21/2024-08:11:10] [I] Export timing to JSON file: 
+[03/21/2024-08:11:10] [I] Export output to JSON file: 
+[03/21/2024-08:11:10] [I] Export profile to JSON file: 
+[03/21/2024-08:11:10] [I] 
+[03/21/2024-08:11:10] [I] === Device Information ===
+[03/21/2024-08:11:10] [I] Selected Device: NVIDIA A10
+[03/21/2024-08:11:10] [I] Compute Capability: 8.6
+[03/21/2024-08:11:10] [I] SMs: 72
+[03/21/2024-08:11:10] [I] Device Global Memory: 22515 MiB
+[03/21/2024-08:11:10] [I] Shared Memory per SM: 100 KiB
+[03/21/2024-08:11:10] [I] Memory Bus Width: 384 bits (ECC enabled)
+[03/21/2024-08:11:10] [I] Application Compute Clock Rate: 1.695 GHz
+[03/21/2024-08:11:10] [I] Application Memory Clock Rate: 6.251 GHz
+[03/21/2024-08:11:10] [I] 
+[03/21/2024-08:11:10] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[03/21/2024-08:11:10] [I] 
+[03/21/2024-08:11:10] [I] TensorRT version: 8.6.1
+[03/21/2024-08:11:10] [I] Loading standard plugins
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::BatchedNMS_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::BatchTilePlugin_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Clip_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::CoordConvAC version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::CropAndResizeDynamic version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::CropAndResize version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::DecodeBbox3DPlugin version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::DetectionLayer_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::EfficientNMS_Explicit_TF_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::EfficientNMS_Implicit_TF_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::EfficientNMS_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::FlattenConcat_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::GenerateDetection_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::GridAnchor_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::GridAnchorRect_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 2
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::LReLU_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ModulatedDeformConv2d version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::MultilevelCropAndResize_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::MultilevelProposeROI_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::MultiscaleDeformableAttnPlugin_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::NMSDynamic_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::NMS_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Normalize_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::PillarScatterPlugin version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::PriorBox_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ProposalDynamic version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ProposalLayer_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Proposal version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::PyramidROIAlign_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Region_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Reorg_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ResizeNearest_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ROIAlign_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::RPROI_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::ScatterND version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::SpecialSlice_TRT version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::Split version 1
+[03/21/2024-08:11:10] [V] [TRT] Registered plugin creator - ::VoxelGeneratorPlugin version 1
+[03/21/2024-08:11:10] [I] Engine loaded in 0.112193 sec.
+[03/21/2024-08:11:10] [I] [TRT] Loaded engine size: 109 MiB
+[03/21/2024-08:11:10] [V] [TRT] Deserialization required 23033 microseconds.
+[03/21/2024-08:11:10] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +107, now: CPU 0, GPU 107 (MiB)
+[03/21/2024-08:11:10] [I] Engine deserialized in 0.0321856 sec.
+[03/21/2024-08:11:10] [V] [TRT] Total per-runner device persistent memory is 1536
+[03/21/2024-08:11:10] [V] [TRT] Total per-runner host persistent memory is 344576
+[03/21/2024-08:11:10] [V] [TRT] Allocated activation device memory of size 7325696
+[03/21/2024-08:11:10] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 114 (MiB)
+[03/21/2024-08:11:10] [V] [TRT] CUDA lazy loading is enabled.
+[03/21/2024-08:11:10] [I] Setting persistentCacheLimit to 0 bytes.
+[03/21/2024-08:11:10] [V] Using enqueueV3.
+[03/21/2024-08:11:10] [I] Using random values for input input.1
+[03/21/2024-08:11:10] [I] Input binding for input.1 with dimensions 1x3x224x224 is created.
+[03/21/2024-08:11:10] [I] Output binding for 495 with dimensions 1x1000 is created.
+[03/21/2024-08:11:10] [I] Layer Information:
+[03/21/2024-08:11:10] [I] [TRT] The profiling verbosity was set to ProfilingVerbosity::kLAYER_NAMES_ONLY when the engine was built, so only the layer names will be returned. Rebuild the engine with ProfilingVerbosity::kDETAILED to get more verbose layer information.
+[03/21/2024-08:11:10] [I] Layers:
+Reformatting CopyNode for Input Tensor 0 to /conv1/Conv + /relu/Relu
+/conv1/Conv + /relu/Relu
+/maxpool/MaxPool
+/layer1/layer1.0/conv1/Conv + /layer1/layer1.0/relu/Relu
+/layer1/layer1.0/conv2/Conv + /layer1/layer1.0/relu_1/Relu
+/layer1/layer1.0/downsample/downsample.0/Conv
+/layer1/layer1.0/conv3/Conv + /layer1/layer1.0/Add + /layer1/layer1.0/relu_2/Relu
+/layer1/layer1.1/conv1/Conv + /layer1/layer1.1/relu/Relu
+/layer1/layer1.1/conv2/Conv + /layer1/layer1.1/relu_1/Relu
+/layer1/layer1.1/conv3/Conv + /layer1/layer1.1/Add + /layer1/layer1.1/relu_2/Relu
+/layer1/layer1.2/conv1/Conv + /layer1/layer1.2/relu/Relu
+/layer1/layer1.2/conv2/Conv + /layer1/layer1.2/relu_1/Relu
+/layer1/layer1.2/conv3/Conv + /layer1/layer1.2/Add + /layer1/layer1.2/relu_2/Relu
+/layer2/layer2.0/conv1/Conv + /layer2/layer2.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.0/conv2/Conv + /layer2/layer2.0/relu_1/Relu
+/layer2/layer2.0/conv2/Conv + /layer2/layer2.0/relu_1/Relu
+/layer2/layer2.0/downsample/downsample.0/Conv
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.0/conv3/Conv + /layer2/layer2.0/Add + /layer2/layer2.0/relu_2/Relu
+/layer2/layer2.0/conv3/Conv + /layer2/layer2.0/Add + /layer2/layer2.0/relu_2/Relu
+/layer2/layer2.1/conv1/Conv + /layer2/layer2.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.1/conv2/Conv + /layer2/layer2.1/relu_1/Relu
+/layer2/layer2.1/conv2/Conv + /layer2/layer2.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.1/conv3/Conv + /layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu
+/layer2/layer2.1/conv3/Conv + /layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu
+/layer2/layer2.2/conv1/Conv + /layer2/layer2.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.2/conv2/Conv + /layer2/layer2.2/relu_1/Relu
+/layer2/layer2.2/conv2/Conv + /layer2/layer2.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.2/conv3/Conv + /layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu
+/layer2/layer2.2/conv3/Conv + /layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu
+/layer2/layer2.3/conv1/Conv + /layer2/layer2.3/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.3/conv2/Conv + /layer2/layer2.3/relu_1/Relu
+/layer2/layer2.3/conv2/Conv + /layer2/layer2.3/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.3/conv3/Conv + /layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu
+/layer2/layer2.3/conv3/Conv + /layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu
+/layer3/layer3.0/conv1/Conv + /layer3/layer3.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.0/conv2/Conv + /layer3/layer3.0/relu_1/Relu
+/layer3/layer3.0/conv2/Conv + /layer3/layer3.0/relu_1/Relu
+/layer3/layer3.0/downsample/downsample.0/Conv
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.0/conv3/Conv + /layer3/layer3.0/Add + /layer3/layer3.0/relu_2/Relu
+/layer3/layer3.0/conv3/Conv + /layer3/layer3.0/Add + /layer3/layer3.0/relu_2/Relu
+/layer3/layer3.1/conv1/Conv + /layer3/layer3.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.1/conv2/Conv + /layer3/layer3.1/relu_1/Relu
+/layer3/layer3.1/conv2/Conv + /layer3/layer3.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.1/conv3/Conv + /layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu
+/layer3/layer3.1/conv3/Conv + /layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu
+/layer3/layer3.2/conv1/Conv + /layer3/layer3.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.2/conv2/Conv + /layer3/layer3.2/relu_1/Relu
+/layer3/layer3.2/conv2/Conv + /layer3/layer3.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.2/conv3/Conv + /layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu
+/layer3/layer3.2/conv3/Conv + /layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu
+/layer3/layer3.3/conv1/Conv + /layer3/layer3.3/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.3/conv2/Conv + /layer3/layer3.3/relu_1/Relu
+/layer3/layer3.3/conv2/Conv + /layer3/layer3.3/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.3/conv3/Conv + /layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu
+/layer3/layer3.3/conv3/Conv + /layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu
+/layer3/layer3.4/conv1/Conv + /layer3/layer3.4/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.4/conv2/Conv + /layer3/layer3.4/relu_1/Relu
+/layer3/layer3.4/conv2/Conv + /layer3/layer3.4/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.4/conv3/Conv + /layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu
+/layer3/layer3.4/conv3/Conv + /layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu
+/layer3/layer3.5/conv1/Conv + /layer3/layer3.5/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.5/conv2/Conv + /layer3/layer3.5/relu_1/Relu
+/layer3/layer3.5/conv2/Conv + /layer3/layer3.5/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.5/conv3/Conv + /layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu
+/layer3/layer3.5/conv3/Conv + /layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu
+/layer4/layer4.0/conv1/Conv + /layer4/layer4.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.0/conv2/Conv + /layer4/layer4.0/relu_1/Relu
+/layer4/layer4.0/conv2/Conv + /layer4/layer4.0/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.0/downsample/downsample.0/Conv
+/layer4/layer4.0/downsample/downsample.0/Conv
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.0/conv3/Conv + /layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 1 to /layer4/layer4.0/conv3/Conv + /layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu
+/layer4/layer4.0/conv3/Conv + /layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu
+/layer4/layer4.1/conv1/Conv + /layer4/layer4.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/conv2/Conv + /layer4/layer4.1/relu_1/Relu
+/layer4/layer4.1/conv2/Conv + /layer4/layer4.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/conv3/Conv + /layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu
+/layer4/layer4.1/conv3/Conv + /layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu
+/layer4/layer4.2/conv1/Conv + /layer4/layer4.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/conv2/Conv + /layer4/layer4.2/relu_1/Relu
+/layer4/layer4.2/conv2/Conv + /layer4/layer4.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/conv3/Conv + /layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu
+/layer4/layer4.2/conv3/Conv + /layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu
+/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /fc/Gemm
+/fc/Gemm
+reshape_after_/fc/Gemm
+
+Bindings:
+input.1
+495
+[03/21/2024-08:11:10] [I] Starting inference
+[03/21/2024-08:11:14] [I] Warmup completed 83 queries over 200 ms
+[03/21/2024-08:11:14] [I] Timing trace has 2248 queries over 3.00403 s
+[03/21/2024-08:11:14] [I] 
+[03/21/2024-08:11:14] [I] === Trace details ===
+[03/21/2024-08:11:14] [I] Trace averages of 10 runs:
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3184 ms - Host latency: 1.38789 ms (enqueue 0.453082 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31737 ms - Host latency: 1.38928 ms (enqueue 0.497404 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31779 ms - Host latency: 1.37931 ms (enqueue 0.403833 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31769 ms - Host latency: 1.39012 ms (enqueue 0.489058 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3181 ms - Host latency: 1.3683 ms (enqueue 0.363255 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31819 ms - Host latency: 1.38492 ms (enqueue 0.480817 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32107 ms - Host latency: 1.40248 ms (enqueue 0.554117 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32147 ms - Host latency: 1.39421 ms (enqueue 0.546536 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3224 ms - Host latency: 1.3848 ms (enqueue 0.477737 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32536 ms - Host latency: 1.39199 ms (enqueue 0.508243 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32465 ms - Host latency: 1.40356 ms (enqueue 0.535406 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32404 ms - Host latency: 1.40164 ms (enqueue 0.572464 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32342 ms - Host latency: 1.40361 ms (enqueue 0.637421 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32465 ms - Host latency: 1.40396 ms (enqueue 0.549344 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3228 ms - Host latency: 1.40115 ms (enqueue 0.597571 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32291 ms - Host latency: 1.40102 ms (enqueue 0.559055 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32372 ms - Host latency: 1.39617 ms (enqueue 0.538943 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32404 ms - Host latency: 1.38609 ms (enqueue 0.394724 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32474 ms - Host latency: 1.38602 ms (enqueue 0.471481 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32434 ms - Host latency: 1.40319 ms (enqueue 0.522229 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32394 ms - Host latency: 1.38599 ms (enqueue 0.406751 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32372 ms - Host latency: 1.40912 ms (enqueue 0.612421 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32301 ms - Host latency: 1.38956 ms (enqueue 0.484888 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32332 ms - Host latency: 1.39077 ms (enqueue 0.392322 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32312 ms - Host latency: 1.38484 ms (enqueue 0.375519 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32332 ms - Host latency: 1.38535 ms (enqueue 0.430847 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32313 ms - Host latency: 1.39553 ms (enqueue 0.512854 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32341 ms - Host latency: 1.39634 ms (enqueue 0.514612 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32383 ms - Host latency: 1.37928 ms (enqueue 0.421307 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32424 ms - Host latency: 1.37782 ms (enqueue 0.391107 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32464 ms - Host latency: 1.35667 ms (enqueue 0.234705 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32208 ms - Host latency: 1.39471 ms (enqueue 0.58858 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31767 ms - Host latency: 1.38418 ms (enqueue 0.508844 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.31922 ms - Host latency: 1.38564 ms (enqueue 0.49455 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32422 ms - Host latency: 1.38542 ms (enqueue 0.449402 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32454 ms - Host latency: 1.39111 ms (enqueue 0.507605 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32495 ms - Host latency: 1.39134 ms (enqueue 0.445215 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3272 ms - Host latency: 1.3945 ms (enqueue 0.491895 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32709 ms - Host latency: 1.3934 ms (enqueue 0.470264 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32742 ms - Host latency: 1.40099 ms (enqueue 0.534106 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32741 ms - Host latency: 1.39466 ms (enqueue 0.495825 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3265 ms - Host latency: 1.41024 ms (enqueue 0.538123 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.327 ms - Host latency: 1.41131 ms (enqueue 0.559125 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32782 ms - Host latency: 1.40533 ms (enqueue 0.540375 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32722 ms - Host latency: 1.41667 ms (enqueue 0.677588 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32812 ms - Host latency: 1.39511 ms (enqueue 0.516229 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3272 ms - Host latency: 1.39969 ms (enqueue 0.49425 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32915 ms - Host latency: 1.38444 ms (enqueue 0.386841 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32729 ms - Host latency: 1.40569 ms (enqueue 0.506976 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32669 ms - Host latency: 1.39932 ms (enqueue 0.532849 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32794 ms - Host latency: 1.40629 ms (enqueue 0.547253 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3274 ms - Host latency: 1.38865 ms (enqueue 0.447968 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32692 ms - Host latency: 1.38239 ms (enqueue 0.400818 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32743 ms - Host latency: 1.39391 ms (enqueue 0.471533 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32721 ms - Host latency: 1.40556 ms (enqueue 0.619214 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3276 ms - Host latency: 1.38746 ms (enqueue 0.44649 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32833 ms - Host latency: 1.37451 ms (enqueue 0.340625 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32781 ms - Host latency: 1.37192 ms (enqueue 0.309479 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32772 ms - Host latency: 1.37745 ms (enqueue 0.383496 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34432 ms - Host latency: 1.37887 ms (enqueue 0.238977 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.37133 ms - Host latency: 1.40395 ms (enqueue 0.249658 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3948 ms - Host latency: 1.42764 ms (enqueue 0.239813 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3915 ms - Host latency: 1.4426 ms (enqueue 0.376324 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.38351 ms - Host latency: 1.46493 ms (enqueue 0.568298 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.37412 ms - Host latency: 1.43513 ms (enqueue 0.446692 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.36069 ms - Host latency: 1.42726 ms (enqueue 0.444312 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.35702 ms - Host latency: 1.43002 ms (enqueue 0.500952 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.35271 ms - Host latency: 1.42473 ms (enqueue 0.574829 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34552 ms - Host latency: 1.40089 ms (enqueue 0.440479 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33623 ms - Host latency: 1.39718 ms (enqueue 0.41106 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3349 ms - Host latency: 1.41984 ms (enqueue 0.609729 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33527 ms - Host latency: 1.39633 ms (enqueue 0.4229 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33466 ms - Host latency: 1.40131 ms (enqueue 0.426379 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33497 ms - Host latency: 1.39021 ms (enqueue 0.429626 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33517 ms - Host latency: 1.36761 ms (enqueue 0.241223 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33555 ms - Host latency: 1.36862 ms (enqueue 0.240466 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.336 ms - Host latency: 1.36818 ms (enqueue 0.236462 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33572 ms - Host latency: 1.37477 ms (enqueue 0.264636 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33666 ms - Host latency: 1.3694 ms (enqueue 0.239514 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33644 ms - Host latency: 1.36875 ms (enqueue 0.238147 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33594 ms - Host latency: 1.3683 ms (enqueue 0.246204 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3354 ms - Host latency: 1.3793 ms (enqueue 0.336414 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33386 ms - Host latency: 1.41301 ms (enqueue 0.57229 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33528 ms - Host latency: 1.40779 ms (enqueue 0.555762 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33448 ms - Host latency: 1.40149 ms (enqueue 0.492773 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33416 ms - Host latency: 1.40647 ms (enqueue 0.549072 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3344 ms - Host latency: 1.39496 ms (enqueue 0.413977 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33521 ms - Host latency: 1.40171 ms (enqueue 0.483679 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33292 ms - Host latency: 1.39976 ms (enqueue 0.476587 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32833 ms - Host latency: 1.38378 ms (enqueue 0.421655 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32794 ms - Host latency: 1.40027 ms (enqueue 0.479053 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32689 ms - Host latency: 1.39933 ms (enqueue 0.54519 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32782 ms - Host latency: 1.40145 ms (enqueue 0.494067 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3281 ms - Host latency: 1.39691 ms (enqueue 0.466943 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32823 ms - Host latency: 1.39526 ms (enqueue 0.484375 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32742 ms - Host latency: 1.39946 ms (enqueue 0.55564 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32789 ms - Host latency: 1.40065 ms (enqueue 0.491138 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3274 ms - Host latency: 1.40023 ms (enqueue 0.487903 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32845 ms - Host latency: 1.39537 ms (enqueue 0.470483 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32812 ms - Host latency: 1.39701 ms (enqueue 0.509534 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32786 ms - Host latency: 1.39626 ms (enqueue 0.462183 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3274 ms - Host latency: 1.39443 ms (enqueue 0.458411 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32761 ms - Host latency: 1.39418 ms (enqueue 0.451465 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32792 ms - Host latency: 1.40619 ms (enqueue 0.559973 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32734 ms - Host latency: 1.40581 ms (enqueue 0.544189 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32847 ms - Host latency: 1.36718 ms (enqueue 0.262976 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32869 ms - Host latency: 1.37905 ms (enqueue 0.34856 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32783 ms - Host latency: 1.40112 ms (enqueue 0.554321 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32731 ms - Host latency: 1.38839 ms (enqueue 0.442908 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32751 ms - Host latency: 1.40039 ms (enqueue 0.478442 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32814 ms - Host latency: 1.40107 ms (enqueue 0.544507 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32699 ms - Host latency: 1.41638 ms (enqueue 0.610242 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32771 ms - Host latency: 1.40715 ms (enqueue 0.506494 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32852 ms - Host latency: 1.38434 ms (enqueue 0.399707 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32764 ms - Host latency: 1.40033 ms (enqueue 0.538867 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32742 ms - Host latency: 1.4069 ms (enqueue 0.525903 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32803 ms - Host latency: 1.39524 ms (enqueue 0.486011 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32719 ms - Host latency: 1.39193 ms (enqueue 0.460205 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32831 ms - Host latency: 1.39504 ms (enqueue 0.484949 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.327 ms - Host latency: 1.39927 ms (enqueue 0.502612 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32762 ms - Host latency: 1.39462 ms (enqueue 0.48374 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32782 ms - Host latency: 1.38939 ms (enqueue 0.447009 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3282 ms - Host latency: 1.40162 ms (enqueue 0.485925 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32772 ms - Host latency: 1.40099 ms (enqueue 0.476978 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32782 ms - Host latency: 1.41469 ms (enqueue 0.576392 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32781 ms - Host latency: 1.40782 ms (enqueue 0.618042 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32792 ms - Host latency: 1.40061 ms (enqueue 0.503857 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32793 ms - Host latency: 1.38978 ms (enqueue 0.456689 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3277 ms - Host latency: 1.38312 ms (enqueue 0.383508 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33132 ms - Host latency: 1.40361 ms (enqueue 0.493762 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3349 ms - Host latency: 1.41929 ms (enqueue 0.626233 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34277 ms - Host latency: 1.40413 ms (enqueue 0.462476 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34257 ms - Host latency: 1.40962 ms (enqueue 0.461401 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34258 ms - Host latency: 1.40575 ms (enqueue 0.435193 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34473 ms - Host latency: 1.42322 ms (enqueue 0.506372 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34388 ms - Host latency: 1.41062 ms (enqueue 0.492041 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3442 ms - Host latency: 1.42222 ms (enqueue 0.56593 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34675 ms - Host latency: 1.41442 ms (enqueue 0.44325 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3473 ms - Host latency: 1.42673 ms (enqueue 0.557544 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34736 ms - Host latency: 1.40833 ms (enqueue 0.47854 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34792 ms - Host latency: 1.42598 ms (enqueue 0.604736 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34797 ms - Host latency: 1.42334 ms (enqueue 0.467871 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34687 ms - Host latency: 1.41631 ms (enqueue 0.427686 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3447 ms - Host latency: 1.41143 ms (enqueue 0.411938 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34441 ms - Host latency: 1.39956 ms (enqueue 0.407007 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34492 ms - Host latency: 1.41333 ms (enqueue 0.436328 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34463 ms - Host latency: 1.423 ms (enqueue 0.605908 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34543 ms - Host latency: 1.40593 ms (enqueue 0.445752 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34512 ms - Host latency: 1.41758 ms (enqueue 0.530493 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3447 ms - Host latency: 1.40613 ms (enqueue 0.432568 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34421 ms - Host latency: 1.42444 ms (enqueue 0.521313 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34419 ms - Host latency: 1.41116 ms (enqueue 0.504248 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3446 ms - Host latency: 1.41716 ms (enqueue 0.488379 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33533 ms - Host latency: 1.40806 ms (enqueue 0.505933 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33572 ms - Host latency: 1.40898 ms (enqueue 0.486035 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33611 ms - Host latency: 1.40249 ms (enqueue 0.441992 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33142 ms - Host latency: 1.42073 ms (enqueue 0.636255 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33167 ms - Host latency: 1.40366 ms (enqueue 0.517041 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33262 ms - Host latency: 1.41677 ms (enqueue 0.572144 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33042 ms - Host latency: 1.40256 ms (enqueue 0.52312 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33169 ms - Host latency: 1.41013 ms (enqueue 0.563257 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33267 ms - Host latency: 1.39941 ms (enqueue 0.448779 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33328 ms - Host latency: 1.41218 ms (enqueue 0.519409 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33203 ms - Host latency: 1.40464 ms (enqueue 0.544434 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33289 ms - Host latency: 1.41111 ms (enqueue 0.552441 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33303 ms - Host latency: 1.39412 ms (enqueue 0.426025 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3324 ms - Host latency: 1.39351 ms (enqueue 0.460596 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33196 ms - Host latency: 1.39963 ms (enqueue 0.474365 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33303 ms - Host latency: 1.39924 ms (enqueue 0.444214 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33271 ms - Host latency: 1.39399 ms (enqueue 0.431812 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33235 ms - Host latency: 1.41101 ms (enqueue 0.568457 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33926 ms - Host latency: 1.41125 ms (enqueue 0.476392 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34277 ms - Host latency: 1.42656 ms (enqueue 0.619824 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34187 ms - Host latency: 1.42573 ms (enqueue 0.583521 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34055 ms - Host latency: 1.4074 ms (enqueue 0.51311 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34094 ms - Host latency: 1.40742 ms (enqueue 0.471265 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34158 ms - Host latency: 1.40889 ms (enqueue 0.461499 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34092 ms - Host latency: 1.41887 ms (enqueue 0.537256 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33713 ms - Host latency: 1.40415 ms (enqueue 0.488062 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33569 ms - Host latency: 1.38579 ms (enqueue 0.375879 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33518 ms - Host latency: 1.40769 ms (enqueue 0.492651 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33596 ms - Host latency: 1.40869 ms (enqueue 0.492676 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33489 ms - Host latency: 1.41487 ms (enqueue 0.557642 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33567 ms - Host latency: 1.40273 ms (enqueue 0.480273 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33535 ms - Host latency: 1.40249 ms (enqueue 0.466382 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3364 ms - Host latency: 1.40334 ms (enqueue 0.475415 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33562 ms - Host latency: 1.39712 ms (enqueue 0.459497 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33469 ms - Host latency: 1.39697 ms (enqueue 0.45061 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33511 ms - Host latency: 1.41367 ms (enqueue 0.538892 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33457 ms - Host latency: 1.41289 ms (enqueue 0.524756 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33425 ms - Host latency: 1.40085 ms (enqueue 0.490332 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33542 ms - Host latency: 1.40269 ms (enqueue 0.494824 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33408 ms - Host latency: 1.40044 ms (enqueue 0.444043 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3304 ms - Host latency: 1.40271 ms (enqueue 0.53479 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32808 ms - Host latency: 1.40049 ms (enqueue 0.54314 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32712 ms - Host latency: 1.40547 ms (enqueue 0.58374 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32781 ms - Host latency: 1.40762 ms (enqueue 0.553369 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.327 ms - Host latency: 1.40122 ms (enqueue 0.515649 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32778 ms - Host latency: 1.41201 ms (enqueue 0.626147 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32708 ms - Host latency: 1.41174 ms (enqueue 0.562256 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32729 ms - Host latency: 1.40613 ms (enqueue 0.550635 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32705 ms - Host latency: 1.4052 ms (enqueue 0.538135 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32781 ms - Host latency: 1.39553 ms (enqueue 0.456689 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32742 ms - Host latency: 1.38269 ms (enqueue 0.407153 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3259 ms - Host latency: 1.3939 ms (enqueue 0.4729 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32722 ms - Host latency: 1.39021 ms (enqueue 0.457983 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.32874 ms - Host latency: 1.41111 ms (enqueue 0.573535 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33301 ms - Host latency: 1.40549 ms (enqueue 0.539429 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33865 ms - Host latency: 1.40508 ms (enqueue 0.473779 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34641 ms - Host latency: 1.42434 ms (enqueue 0.569605 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34629 ms - Host latency: 1.42427 ms (enqueue 0.558936 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34785 ms - Host latency: 1.41445 ms (enqueue 0.5427 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34893 ms - Host latency: 1.41594 ms (enqueue 0.499048 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3491 ms - Host latency: 1.40461 ms (enqueue 0.365674 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34968 ms - Host latency: 1.39924 ms (enqueue 0.371484 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3498 ms - Host latency: 1.38206 ms (enqueue 0.233936 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34519 ms - Host latency: 1.42373 ms (enqueue 0.585327 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34431 ms - Host latency: 1.4053 ms (enqueue 0.445361 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34368 ms - Host latency: 1.42112 ms (enqueue 0.597363 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34463 ms - Host latency: 1.40579 ms (enqueue 0.419409 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.3436 ms - Host latency: 1.42717 ms (enqueue 0.565625 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.345 ms - Host latency: 1.41672 ms (enqueue 0.536157 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.34453 ms - Host latency: 1.40522 ms (enqueue 0.452954 ms)
+[03/21/2024-08:11:14] [I] Average on 10 runs - GPU latency: 1.33467 ms - Host latency: 1.39558 ms (enqueue 0.458301 ms)
+[03/21/2024-08:11:14] [I] 
+[03/21/2024-08:11:14] [I] === Performance summary ===
+[03/21/2024-08:11:14] [I] Throughput: 748.328 qps
+[03/21/2024-08:11:14] [I] Latency: min = 1.34653 ms, max = 1.50891 ms, mean = 1.4011 ms, median = 1.41541 ms, percentile(90%) = 1.43359 ms, percentile(95%) = 1.43665 ms, percentile(99%) = 1.45117 ms
+[03/21/2024-08:11:14] [I] Enqueue Time: min = 0.226074 ms, max = 0.846436 ms, mean = 0.479705 ms, median = 0.519043 ms, percentile(90%) = 0.780518 ms, percentile(95%) = 0.790039 ms, percentile(99%) = 0.81958 ms
+[03/21/2024-08:11:14] [I] H2D Latency: min = 0.02771 ms, max = 0.12085 ms, mean = 0.063433 ms, median = 0.0848999 ms, percentile(90%) = 0.0865479 ms, percentile(95%) = 0.0880127 ms, percentile(99%) = 0.103027 ms
+[03/21/2024-08:11:14] [I] GPU Compute Time: min = 1.31479 ms, max = 1.39679 ms, mean = 1.33363 ms, median = 1.3302 ms, percentile(90%) = 1.34644 ms, percentile(95%) = 1.34863 ms, percentile(99%) = 1.3916 ms
+[03/21/2024-08:11:14] [I] D2H Latency: min = 0.00317383 ms, max = 0.0057373 ms, mean = 0.00404754 ms, median = 0.00378418 ms, percentile(90%) = 0.00488281 ms, percentile(95%) = 0.00512695 ms, percentile(99%) = 0.00543213 ms
+[03/21/2024-08:11:14] [I] Total Host Walltime: 3.00403 s
+[03/21/2024-08:11:14] [I] Total GPU Compute Time: 2.99799 s
+[03/21/2024-08:11:14] [I] Explanations of the performance metrics are printed in the verbose logs.
+[03/21/2024-08:11:14] [V] 
+[03/21/2024-08:11:14] [V] === Explanations of the performance metrics ===
+[03/21/2024-08:11:14] [V] Total Host Walltime: the host walltime from when the first query (after warmups) is enqueued to when the last query is completed.
+[03/21/2024-08:11:14] [V] GPU Compute Time: the GPU latency to execute the kernels for a query.
+[03/21/2024-08:11:14] [V] Total GPU Compute Time: the summation of the GPU Compute Time of all the queries. If this is significantly shorter than Total Host Walltime, the GPU may be under-utilized because of host-side overheads or data transfers.
+[03/21/2024-08:11:14] [V] Throughput: the observed throughput computed by dividing the number of queries by the Total Host Walltime. If this is significantly lower than the reciprocal of GPU Compute Time, the GPU may be under-utilized because of host-side overheads or data transfers.
+[03/21/2024-08:11:14] [V] Enqueue Time: the host latency to enqueue a query. If this is longer than GPU Compute Time, the GPU may be under-utilized.
+[03/21/2024-08:11:14] [V] H2D Latency: the latency for host-to-device data transfers for input tensors of a single query.
+[03/21/2024-08:11:14] [V] D2H Latency: the latency for device-to-host data transfers for output tensors of a single query.
+[03/21/2024-08:11:14] [V] Latency: the summation of H2D Latency, GPU Compute Time, and D2H Latency. This is the latency to infer a single query.
+[03/21/2024-08:11:14] [I] 
+[03/21/2024-08:11:17] [I] 
+[03/21/2024-08:11:17] [I] === Profile (2155 iterations ) ===
+[03/21/2024-08:11:17] [I]    Time(ms)     Avg.(ms)   Median(ms)   Time(%)   Layer
+[03/21/2024-08:11:17] [I]       15.49       0.0072       0.0072       0.5   Reformatting CopyNode for Input Tensor 0 to /conv1/Conv + /relu/Relu
+[03/21/2024-08:11:17] [I]       44.01       0.0204       0.0205       1.4   /conv1/Conv + /relu/Relu
+[03/21/2024-08:11:17] [I]       14.60       0.0068       0.0072       0.5   /maxpool/MaxPool
+[03/21/2024-08:11:17] [I]       16.71       0.0078       0.0082       0.5   /layer1/layer1.0/conv1/Conv + /layer1/layer1.0/relu/Relu
+[03/21/2024-08:11:17] [I]       46.48       0.0216       0.0215       1.5   /layer1/layer1.0/conv2/Conv + /layer1/layer1.0/relu_1/Relu
+[03/21/2024-08:11:17] [I]       23.08       0.0107       0.0104       0.8   /layer1/layer1.0/downsample/downsample.0/Conv
+[03/21/2024-08:11:17] [I]       31.05       0.0144       0.0143       1.0   /layer1/layer1.0/conv3/Conv + /layer1/layer1.0/Add + /layer1/layer1.0/relu_2/Relu
+[03/21/2024-08:11:17] [I]       24.78       0.0115       0.0113       0.8   /layer1/layer1.1/conv1/Conv + /layer1/layer1.1/relu/Relu
+[03/21/2024-08:11:17] [I]       46.71       0.0217       0.0215       1.5   /layer1/layer1.1/conv2/Conv + /layer1/layer1.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]       26.39       0.0122       0.0123       0.9   /layer1/layer1.1/conv3/Conv + /layer1/layer1.1/Add + /layer1/layer1.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       22.89       0.0106       0.0102       0.7   /layer1/layer1.2/conv1/Conv + /layer1/layer1.2/relu/Relu
+[03/21/2024-08:11:17] [I]       46.35       0.0215       0.0215       1.5   /layer1/layer1.2/conv2/Conv + /layer1/layer1.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]       26.55       0.0123       0.0123       0.9   /layer1/layer1.2/conv3/Conv + /layer1/layer1.2/Add + /layer1/layer1.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       30.99       0.0144       0.0143       1.0   /layer2/layer2.0/conv1/Conv + /layer2/layer2.0/relu/Relu
+[03/21/2024-08:11:17] [I]       90.62       0.0420       0.0420       3.0   /layer2/layer2.0/conv2/Conv + /layer2/layer2.0/relu_1/Relu
+[03/21/2024-08:11:17] [I]       44.59       0.0207       0.0205       1.5   /layer2/layer2.0/downsample/downsample.0/Conv
+[03/21/2024-08:11:17] [I]       26.52       0.0123       0.0123       0.9   /layer2/layer2.0/conv3/Conv + /layer2/layer2.0/Add + /layer2/layer2.0/relu_2/Relu
+[03/21/2024-08:11:17] [I]       25.76       0.0120       0.0123       0.8   /layer2/layer2.1/conv1/Conv + /layer2/layer2.1/relu/Relu
+[03/21/2024-08:11:17] [I]        9.30       0.0043       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.1/conv2/Conv + /layer2/layer2.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]       54.32       0.0252       0.0256       1.8   /layer2/layer2.1/conv2/Conv + /layer2/layer2.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.49       0.0044       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.1/conv3/Conv + /layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       25.01       0.0116       0.0113       0.8   /layer2/layer2.1/conv3/Conv + /layer2/layer2.1/Add + /layer2/layer2.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       24.85       0.0115       0.0113       0.8   /layer2/layer2.2/conv1/Conv + /layer2/layer2.2/relu/Relu
+[03/21/2024-08:11:17] [I]        8.98       0.0042       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.2/conv2/Conv + /layer2/layer2.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]       54.02       0.0251       0.0247       1.8   /layer2/layer2.2/conv2/Conv + /layer2/layer2.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.45       0.0044       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.2/conv3/Conv + /layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       25.64       0.0119       0.0123       0.8   /layer2/layer2.2/conv3/Conv + /layer2/layer2.2/Add + /layer2/layer2.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       25.33       0.0118       0.0115       0.8   /layer2/layer2.3/conv1/Conv + /layer2/layer2.3/relu/Relu
+[03/21/2024-08:11:17] [I]        9.01       0.0042       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.3/conv2/Conv + /layer2/layer2.3/relu_1/Relu
+[03/21/2024-08:11:17] [I]       53.21       0.0247       0.0246       1.7   /layer2/layer2.3/conv2/Conv + /layer2/layer2.3/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.42       0.0044       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer2/layer2.3/conv3/Conv + /layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu
+[03/21/2024-08:11:17] [I]       25.62       0.0119       0.0123       0.8   /layer2/layer2.3/conv3/Conv + /layer2/layer2.3/Add + /layer2/layer2.3/relu_2/Relu
+[03/21/2024-08:11:17] [I]       32.51       0.0151       0.0154       1.1   /layer3/layer3.0/conv1/Conv + /layer3/layer3.0/relu/Relu
+[03/21/2024-08:11:17] [I]      140.55       0.0652       0.0655       4.6   /layer3/layer3.0/conv2/Conv + /layer3/layer3.0/relu_1/Relu
+[03/21/2024-08:11:17] [I]       62.31       0.0289       0.0287       2.0   /layer3/layer3.0/downsample/downsample.0/Conv
+[03/21/2024-08:11:17] [I]       25.40       0.0118       0.0116       0.8   /layer3/layer3.0/conv3/Conv + /layer3/layer3.0/Add + /layer3/layer3.0/relu_2/Relu
+[03/21/2024-08:11:17] [I]       29.43       0.0137       0.0133       1.0   /layer3/layer3.1/conv1/Conv + /layer3/layer3.1/relu/Relu
+[03/21/2024-08:11:17] [I]        9.22       0.0043       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.1/conv2/Conv + /layer3/layer3.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]       94.79       0.0440       0.0440       3.1   /layer3/layer3.1/conv2/Conv + /layer3/layer3.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.06       0.0042       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.1/conv3/Conv + /layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       26.55       0.0123       0.0123       0.9   /layer3/layer3.1/conv3/Conv + /layer3/layer3.1/Add + /layer3/layer3.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       28.70       0.0133       0.0133       0.9   /layer3/layer3.2/conv1/Conv + /layer3/layer3.2/relu/Relu
+[03/21/2024-08:11:17] [I]        8.91       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.2/conv2/Conv + /layer3/layer3.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]       93.36       0.0433       0.0430       3.1   /layer3/layer3.2/conv2/Conv + /layer3/layer3.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]        8.89       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.2/conv3/Conv + /layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       26.89       0.0125       0.0123       0.9   /layer3/layer3.2/conv3/Conv + /layer3/layer3.2/Add + /layer3/layer3.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       28.83       0.0134       0.0133       0.9   /layer3/layer3.3/conv1/Conv + /layer3/layer3.3/relu/Relu
+[03/21/2024-08:11:17] [I]        8.94       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.3/conv2/Conv + /layer3/layer3.3/relu_1/Relu
+[03/21/2024-08:11:17] [I]       93.28       0.0433       0.0430       3.1   /layer3/layer3.3/conv2/Conv + /layer3/layer3.3/relu_1/Relu
+[03/21/2024-08:11:17] [I]        8.90       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.3/conv3/Conv + /layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu
+[03/21/2024-08:11:17] [I]       26.54       0.0123       0.0123       0.9   /layer3/layer3.3/conv3/Conv + /layer3/layer3.3/Add + /layer3/layer3.3/relu_2/Relu
+[03/21/2024-08:11:17] [I]       28.76       0.0133       0.0133       0.9   /layer3/layer3.4/conv1/Conv + /layer3/layer3.4/relu/Relu
+[03/21/2024-08:11:17] [I]        8.92       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.4/conv2/Conv + /layer3/layer3.4/relu_1/Relu
+[03/21/2024-08:11:17] [I]       93.43       0.0434       0.0430       3.1   /layer3/layer3.4/conv2/Conv + /layer3/layer3.4/relu_1/Relu
+[03/21/2024-08:11:17] [I]        8.91       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.4/conv3/Conv + /layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu
+[03/21/2024-08:11:17] [I]       27.06       0.0126       0.0123       0.9   /layer3/layer3.4/conv3/Conv + /layer3/layer3.4/Add + /layer3/layer3.4/relu_2/Relu
+[03/21/2024-08:11:17] [I]       28.73       0.0133       0.0133       0.9   /layer3/layer3.5/conv1/Conv + /layer3/layer3.5/relu/Relu
+[03/21/2024-08:11:17] [I]        8.93       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.5/conv2/Conv + /layer3/layer3.5/relu_1/Relu
+[03/21/2024-08:11:17] [I]       93.22       0.0433       0.0430       3.1   /layer3/layer3.5/conv2/Conv + /layer3/layer3.5/relu_1/Relu
+[03/21/2024-08:11:17] [I]        8.90       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer3/layer3.5/conv3/Conv + /layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu
+[03/21/2024-08:11:17] [I]       26.56       0.0123       0.0123       0.9   /layer3/layer3.5/conv3/Conv + /layer3/layer3.5/Add + /layer3/layer3.5/relu_2/Relu
+[03/21/2024-08:11:17] [I]       38.36       0.0178       0.0174       1.3   /layer4/layer4.0/conv1/Conv + /layer4/layer4.0/relu/Relu
+[03/21/2024-08:11:17] [I]      273.25       0.1268       0.1270       8.9   /layer4/layer4.0/conv2/Conv + /layer4/layer4.0/relu_1/Relu
+[03/21/2024-08:11:17] [I]       91.80       0.0426       0.0430       3.0   /layer4/layer4.0/downsample/downsample.0/Conv
+[03/21/2024-08:11:17] [I]       33.51       0.0156       0.0154       1.1   /layer4/layer4.0/conv3/Conv + /layer4/layer4.0/Add + /layer4/layer4.0/relu_2/Relu
+[03/21/2024-08:11:17] [I]       39.65       0.0184       0.0184       1.3   /layer4/layer4.1/conv1/Conv + /layer4/layer4.1/relu/Relu
+[03/21/2024-08:11:17] [I]        8.86       0.0041       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/conv2/Conv + /layer4/layer4.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]      165.22       0.0767       0.0768       5.4   /layer4/layer4.1/conv2/Conv + /layer4/layer4.1/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.46       0.0044       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.1/conv3/Conv + /layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       33.52       0.0156       0.0154       1.1   /layer4/layer4.1/conv3/Conv + /layer4/layer4.1/Add + /layer4/layer4.1/relu_2/Relu
+[03/21/2024-08:11:17] [I]       40.73       0.0189       0.0184       1.3   /layer4/layer4.2/conv1/Conv + /layer4/layer4.2/relu/Relu
+[03/21/2024-08:11:17] [I]        8.63       0.0040       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/conv2/Conv + /layer4/layer4.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]      163.55       0.0759       0.0758       5.4   /layer4/layer4.2/conv2/Conv + /layer4/layer4.2/relu_1/Relu
+[03/21/2024-08:11:17] [I]        9.26       0.0043       0.0041       0.3   Reformatting CopyNode for Input Tensor 0 to /layer4/layer4.2/conv3/Conv + /layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       33.97       0.0158       0.0154       1.1   /layer4/layer4.2/conv3/Conv + /layer4/layer4.2/Add + /layer4/layer4.2/relu_2/Relu
+[03/21/2024-08:11:17] [I]       13.29       0.0062       0.0061       0.4   /avgpool/GlobalAveragePool
+[03/21/2024-08:11:17] [I]       47.35       0.0220       0.0215       1.6   /fc/Gemm
+[03/21/2024-08:11:17] [I]     3054.13       1.4172       1.4163     100.0   Total
+[03/21/2024-08:11:17] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8601] # /home/ubuntu/TensorRT-8.6.1.6/bin/trtexec --separateProfileRun --verbose --dumpProfile --dumpLayerInfo --loadEngine=./resnet50-origin.engine
