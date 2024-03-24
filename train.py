@@ -1,3 +1,4 @@
+import random
 import torch, torchvision
 import torchvision.transforms as transforms
 import torch.optim as optim
@@ -8,19 +9,23 @@ def train(model: torch.nn.Module):
     #do some training
     return
 
-def test(model_path: str):
-    model = torchvision.models.resnet50()
+def test(data_path: str, model_path: str, adjust_output = None):
+    model = torchvision.models.resnet50(torchvision.models.ResNet50_Weights.IMAGENET1K_V2)
     model = quantize_model(model)
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, 10)  # Modify the last layer for 10 classes
-    model.load_state_dict(torch.load(model_path))
+    if adjust_output:
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, adjust_output)
+    #model.load_state_dict(torch.load(model_path))
+    # model.apply(torch.ao.quantization.disable_observer)
     if torch.cuda.is_available():
         device = torch.device("cuda")
         print("Using GPU!")
     else:
         device = torch.device("cpu")
         print("Using CPU!")
+    print('Moving model to device...', end="")
     model.to(device)
+    print('Done!')
 
     # Example transforms for test data, similar to training data but without augmentation
     test_transform = transforms.Compose([
@@ -30,39 +35,30 @@ def test(model_path: str):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
 
-    # Example dataset loading for test data
-    test_dataset = torchvision.datasets.CIFAR10(root='test/cifar', train=False, download=True, transform=test_transform)
-
-    # Example data loader for test data
-    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=4)
+    test_dataset = torchvision.datasets.ImageNet(root=data_path, split='val', transform=test_transform)
+    print('Loading data...', end='')
+    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=20)
+    print('Done!')
 
     # do evaluation
     model.eval()  # Set the model to evaluation mode
-    test_loss = 0
-    correct = 0
-    total = 0
-    criterion = nn.CrossEntropyLoss()
-
+    print('Evaluating...', end='')
+    model.eval()  # Set model to evaluation mode
     with torch.no_grad():
-        for data in test_loader:
-            inputs, labels = data
-            inputs, labels = inputs.to(device), labels.to(device)
+        correct_val_predictions = 0
+        total_val_samples = 0
+        for val_inputs, val_labels in test_loader:
+            val_inputs = val_inputs.to(device)
+            val_labels = val_labels.to(device)
+            val_outputs = model(val_inputs)
+            _, val_predicted = torch.max(val_outputs, 1)
+            correct_val_predictions += (val_predicted == val_labels).sum().item()
+            total_val_samples += val_labels.size(0)
+        val_accuracy = correct_val_predictions / total_val_samples
+        print('Validation Accuracy: ', 100 * val_accuracy)
+    print('Done!')
 
-            outputs = model(inputs)
-            loss = criterion(outputs, labels)
-
-            test_loss += loss.item()
-
-            _, predicted = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
-
-    accuracy = 100 * correct / total
-    average_loss = test_loss / len(test_loader)
-
-    print('Test Loss: {:.4f}, Accuracy: {:.2f}%'.format(average_loss, accuracy))
-
-def test_train(freeze=False, epochs=10, model_path=None, save_path='model.pth'):
+def test_train(data_path, freeze=False, epochs=10, model_path=None, save_path='model.pth', adjust_output=None):
     if torch.cuda.is_available():
         device = torch.device("cuda")
         print("Using GPU!")
@@ -70,20 +66,23 @@ def test_train(freeze=False, epochs=10, model_path=None, save_path='model.pth'):
         device = torch.device("cpu")
         print("Using CPU!")
 
-    model = torchvision.models.resnet50(pretrained=True)
-    model = quantize_model(model)
+    model = torchvision.models.resnet50(torchvision.models.ResNet50_Weights.IMAGENET1K_V2)
+    #model = torchvision.models.resnet50()
+    #model = quantize_model(model)
 
     # Freeze all layers except the final fully connected layer
     if freeze:
         for param in model.parameters():
             param.requires_grad = False
-    
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, 10)  # Modify the last layer for 10 classes
+       
+    if adjust_output:
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, adjust_output)  # Modify the last layer for 10 classes
     if model_path:
         model.load_state_dict(torch.load(model_path))
 
     # Move model to GPU
+    print('Moving model to GPU...')
     model = model.to(device)
 
     # Example transforms, you should adjust them according to your dataset
@@ -95,50 +94,80 @@ def test_train(freeze=False, epochs=10, model_path=None, save_path='model.pth'):
     ])
 
     # Example dataset loading, you should replace this with your dataset loading
-    train_dataset = torchvision.datasets.CIFAR10(root='train/cifar', train=True, download=False, transform=transform)
+    train_dataset = torchvision.datasets.ImageNet(root=data_path, split='train', transform=transform)
 
     # Example data loader, you should replace this with your data loader
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
+    print('Loading data...')
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=10)
+    val_dataset = torchvision.datasets.ImageNet(root=data_path, split='val', transform=transform)
+    print('Loading data...', end='')
+    val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=10)
+    print('Done!')
 
     # Define loss function and optimizer
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+    optimizer = optim.AdamW(model.parameters(), lr=1e-5)
+    # optimizer = optim.SGD(model.parameters(), lr=0.0001, momentum=0.9)
 
     # Training loop
+    print('Training...')
     for epoch in range(epochs):
-      running_loss = 0.0
-      correct_predictions = 0
-      total_samples = 0
+        running_loss = 0.0
+        correct_predictions = 0
+        total_samples = 0
 
-      for i, (inputs, labels) in enumerate(train_loader):
-          inputs = inputs.to(device)
-          labels = labels.to(device)  # Move data to device
+        for i, (inputs, labels) in enumerate(train_loader):
+            inputs = inputs.to(device)
+            labels = labels.to(device)  # Move data to device
 
-          optimizer.zero_grad()
+            optimizer.zero_grad()
 
-          outputs = model(inputs)
-          loss = criterion(outputs, labels)
+            outputs = model(inputs)
+            loss = criterion(outputs, labels)
 
-          loss.backward()
-          optimizer.step()
+            loss.backward()
+            optimizer.step()
 
-          running_loss += loss.item()
+            running_loss += loss.item()
 
-          # Compute accuracy
-          _, predicted = torch.max(outputs, 1)
-          correct_predictions += (predicted == labels).sum().item()
-          total_samples += labels.size(0)
+            # Compute accuracy
+            _, predicted = torch.max(outputs, 1)
+            correct_predictions += (predicted == labels).sum().item()
+            total_samples += labels.size(0)
 
-          if i % 100 == 99:
-              print('[%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 100))
-              running_loss = 0.0
+            if i % 100 == 99:
+                print('[%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 100))
+                running_loss = 0.0
 
-      # Calculate accuracy after each epoch
-      accuracy = correct_predictions / total_samples
-      print('Epoch %d Accuracy: %.2f%%' % (epoch + 1, 100 * accuracy))
+        # Calculate accuracy after each epoch
+        accuracy = correct_predictions / total_samples
+        print('Epoch %d Training Accuracy: %.2f%%' % (epoch + 1, 100 * accuracy))
 
+        # Validation
+        print('Evaluating...', end='')
+        model.apply(torch.ao.quantization.disable_observer)
+        model.eval()  # Set model to evaluation mode
+        with torch.no_grad():
+            correct_val_predictions = 0
+            total_val_samples = 0
+            for val_inputs, val_labels in val_loader:
+                val_inputs = val_inputs.to(device)
+                val_labels = val_labels.to(device)
+                val_outputs = model(val_inputs)
+                _, val_predicted = torch.max(val_outputs, 1)
+                correct_val_predictions += (val_predicted == val_labels).sum().item()
+                total_val_samples += val_labels.size(0)
+            val_accuracy = correct_val_predictions / total_val_samples
+            print('Epoch %d Validation Accuracy: %.2f%%' % (epoch + 1, 100 * val_accuracy))
+        print('Done!')
+        model.apply(torch.ao.quantization.enable_observer)
+        model.train()
     print('Finished Training')
     torch.save(model.state_dict(), save_path)
-#test_train(freeze=True, epochs=5, save_path='cifar_frozen_quant.pth')
-# test_train(freeze=False, epochs=10, model_path='cifar_frozen_quant.pth', save_path='cifar_full_quant.pth')
-test("cifar_full_quant.pth")
+#test_train(data_path='../imagenet', freeze=True, epochs=2, save_path='imagenet_frozen_quant.pth')
+#test_train(data_path='../imagenet', freeze=False, epochs=15, model_path='imagenet_full_quant.pth', save_path='imagenet_full_quant2.pth')
+#test('../imagenet-val', 'imagenet_full_quant.pth')
+    
+#test_train(data_path='../imagenet', freeze=True, epochs=2, save_path='completely_frozen_resnet.pth')
+#test_train(data_path='../imagenet', freeze=False, epochs=10, save_path='resnet_non_quantized_10.pth')
+test('../imagenet-val', model_path='')
